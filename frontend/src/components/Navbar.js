@@ -61,7 +61,6 @@ const Navbar = () => {
         {/* Notifications */}
         <div className="dropdown">
           <a
-            className="text-reset me-3 dropdown-toggle hidden-arrow"
             href="#"
             id="navbarDropdownMenuLink"
             role="button"
