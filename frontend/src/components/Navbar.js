@@ -58,6 +58,21 @@ const Navbar = () => {
               Browse 
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/userprofile">
+              User Profile 
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/userdash">
+              User Dashboard 
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/configdash">
+              Configure Dashboard
+            </NavLink>
+          </li>
         </ul>
         {/* Left links */}
       </div>
