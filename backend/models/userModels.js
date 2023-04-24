@@ -9,4 +9,4 @@ const myschema=new Schema({
     createdAt: Date
 });
 
-module.exports=Model('users', myschema);
+module.exports=model('users', myschema);

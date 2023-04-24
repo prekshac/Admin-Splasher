@@ -1,11 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import app_config from '../../config';
+
+const {themeColor} = app_config;
 
 const Navbar = () => {
   return (
     <>
   {/* Navbar */}
-  <nav className="navbar navbar-expand-lg navbar-light bg-white">
+  <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: themeColor}}>
     {/* Container wrapper */}
     <div className="container-fluid">
       {/* Toggle button */}
@@ -25,8 +28,8 @@ const Navbar = () => {
         {/* Navbar brand */}
         <a className="navbar-brand mt-2 mt-lg-0" href="#">
           <img
-            src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-            height={15}
+            src="/logo.png"
+            height={50}
             alt="MDB Logo"
             loading="lazy"
           />
