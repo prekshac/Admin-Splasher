@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
 import Login from './components/main/Login'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/main/Navbar';
 import Signup from './components/main/Signup';
 import Main from './components/main';
@@ -16,6 +16,7 @@ function App() {
         <Routes>
 
           
+          <Route path='/' element={<Navigate to="/main/home"/>}/>
           <Route path='main' element={<Main/>}>
           <Route path='home' element={<Home/>}/>
           <Route path='login' element={<Login/>}/>
