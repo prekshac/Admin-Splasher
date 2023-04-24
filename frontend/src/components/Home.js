@@ -4,7 +4,7 @@ import './Home.css';
 const Home = () => {
   return (
     <div>
-        <h1 style={{ color : 'white', backgroundColor: 'blueviolet', width: 'fit-content' }}>Welcome to Home </h1>
+        <h1 style={{ color : 'red', width: 'fit-content' }}>Welcome to Home </h1>
 
         <input type="text" />
 

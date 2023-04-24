@@ -34,42 +34,42 @@ const Navbar = () => {
         {/* Left links */}
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/home">
+            <NavLink className="nav-link" to="/main/home">
               Home
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/login">
+            <NavLink className="nav-link" to="/main/login">
               Login
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/signup">
+            <NavLink className="nav-link" to="/main/signup">
               Sign Up
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/feedback">
+            <NavLink className="nav-link" to="/main/feedback">
               Feedback
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/browse">
+            <NavLink className="nav-link" to="/main/browse">
               Browse 
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/userprofile">
+            <NavLink className="nav-link" to="/main/userprofile">
               User Profile 
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/userdash">
+            <NavLink className="nav-link" to="/main/userdash">
               User Dashboard 
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/configdash">
+            <NavLink className="nav-link" to="/main/configdash">
               Configure Dashboard
             </NavLink>
           </li>
