@@ -10,7 +10,7 @@ app.use(cors({
 
 app.use(express.json());
 
-app.use('/user', userRouter);
+app.use('/users', userRouter);
 
 app.get('/', (req, res)=>{
     res.send('Working perfectly');
