@@ -84,26 +84,9 @@ const Signup = () => {
             </div>
             
             <hr className="mx-n3" />
-            <div className="row align-items-center py-3">
-              <div className="col-md-3 ps-5">
-                <h6 className="mb-0">Upload CV</h6>
-              </div>
-              <div className="col-md-9 pe-5">
-                <input
-                  className="form-control form-control-lg"
-                  id="formFileLg"
-                  type="file"
-                />
-                <div className="small text-muted mt-2">
-                  Upload your CV/Resume or any other relevant file. Max file
-                  size 50 MB
-                </div>
-              </div>
-            </div>
-            <hr className="mx-n3" />
             <div className="px-5 py-4">
               <button type="submit" className="btn btn-primary btn-lg">
-                Send application
+                Sign Up ✅
               </button>
             </div>
             </form>

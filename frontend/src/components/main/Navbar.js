@@ -56,26 +56,6 @@ const Navbar = () => {
               Feedback
             </NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/main/browse">
-              Browse 
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/main/userprofile">
-              User Profile 
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/main/userdash">
-              User Dashboard 
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/main/configdash">
-              Configure Dashboard
-            </NavLink>
-          </li>
         </ul>
         {/* Left links */}
       </div>
