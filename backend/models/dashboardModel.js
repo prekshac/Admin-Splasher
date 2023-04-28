@@ -2,12 +2,11 @@ const {Schema, model, Types}= require('../connection');
 
 const myschema=new Schema({
     user: {type: Types.ObjectId, ref:'users'},
-    name: {type: String, required: true},  //mandatory field
-    email: {type: String, required: true},
-    password: {type: String, required: true},
-    avatar: String,
-    role:{type: String, default: 'user'},
-    createdAt: Date
+    entities: [{type: Types.ObjectId, ref:'entity'}],  
+    tables: [{type: Types.ObjectId, ref:'table'}],  
+    data: Object,
+    createdAt: Date,
+    updatedAt: Date
 });
 
 module.exports=Model('dashboard', myschema);
