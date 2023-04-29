@@ -1,8 +1,9 @@
 import React from 'react'
+import Rating from 'react-rating'
 
 const Feedback = () => {
   return (
-    <div><section style={{ backgroundColor: "#d94125" }}>
+    <div><section style={{ backgroundColor: "#ffffff" }}>
     <div className="container my-5 py-5 text-dark">
       <div className="row d-flex justify-content-center">
         <div className="col-md-10 col-lg-8 col-xl-6">
@@ -18,6 +19,10 @@ const Feedback = () => {
                 />
                 <div className="w-100">
                   <h5>Add a comment</h5>
+                  <Rating
+  emptySymbol={<img src="/star_filled.png" className="icon" />}
+  fullSymbol={<img src="/star.png" className="icon" />}
+/>
                   <ul className="rating mb-3" data-mdb-toggle="rating">
                     <li>
                       <i className="far fa-star fa-sm text-danger" title="Bad" />
