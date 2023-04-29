@@ -15,7 +15,7 @@ const Signup = () => {
 
 
   return (
-    <section className="vh-100" style={{ backgroundColor: "#2779e2" }}>
+    <section className="vh-100" style={{ backgroundColor: "#ccc" }}>
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-xl-9">

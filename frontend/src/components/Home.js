@@ -3,68 +3,9 @@ import './Home.css';
 
 const Home = () => {
   return (
+    
     <div>
-  <div data-draggable="true" style={{ position: "relative" }}>
-    {/**/}
-    {/**/}
-    <section draggable="false" className="container pt-5" data-v-271253ee="">
-      <section className="mb-10 text-center">
-        <h2 className="fw-bold mb-5 text-center">
-          {" "}
-          <span className="me-1">Why is it so</span>
-          <u className="text-primary">great?</u>{" "}
-        </h2>
-        <div className="row gx-lg-5">
-          <div className="col-md-4 mb-5 mb-md-0">
-            <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
-              {" "}
-              <i
-                className="fas fa-headset fa-lg text-white fa-fw"
-                aria-controls="#picker-editor"
-              />{" "}
-            </div>
-            <h5 className="fw-bold mb-3">Support 24/7</h5>
-            <p className="text-muted mb-0">
-              Laudantium totam quas cumque pariatur at doloremque hic quos quia
-              eius. Reiciendis optio minus mollitia rerum labore facilis
-              inventore voluptatem ad, quae quia sint. Ullam.
-            </p>
-          </div>
-          <div className="col-md-4 mb-5 mb-md-0">
-            <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
-              {" "}
-              <i
-                className="fas fa-shield-alt fa-lg text-white fa-fw"
-                aria-controls="#picker-editor"
-              />{" "}
-            </div>
-            <h5 className="fw-bold mb-3">Safe and solid</h5>
-            <p className="text-muted mb-0">
-              Eum nostrum fugit numquam, voluptates veniam neque quibusdam ullam
-              aspernatur odio soluta, quisquam dolore animi mollitia a omnis
-              praesentium, expedita nobis!
-            </p>
-          </div>
-          <div className="col-md-4 mb-5 mb-md-0">
-            <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
-              {" "}
-              <i
-                className="fas fa-shipping-fast fa-lg text-white fa-fw"
-                aria-controls="#picker-editor"
-              />{" "}
-            </div>
-            <h5 className="fw-bold mb-3">Extremely fast</h5>
-            <p className="text-muted mb-0">
-              Enim cupiditate, minus nulla dolor cumque iure eveniet facere
-              ullam beatae hic voluptatibus dolores exercitationem? Facilis
-              debitis aspernatur amet nisi?
-            </p>
-          </div>
-        </div>
-      </section>
-    </section>
-    {/**/}
-  </div>
+ 
   <div data-draggable="true" style={{ position: "relative" }}>
     {/**/}
     {/**/}
@@ -122,6 +63,67 @@ const Home = () => {
                 Learn more
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    {/**/}
+  </div>
+  <div data-draggable="true" style={{ position: "relative" }}>
+    {/**/}
+    {/**/}
+    <section draggable="false" className="container pt-5" data-v-271253ee="">
+      <section className="mb-10 text-center">
+        <h2 className="fw-bold mb-5 text-center">
+          {" "}
+          <span className="me-1">Why is it so</span>
+          <u className="text-primary">great?</u>{" "}
+        </h2>
+        <div className="row gx-lg-5">
+          <div className="col-md-4 mb-5 mb-md-0">
+            <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
+              {" "}
+              <i
+                className="fas fa-headset fa-lg text-white fa-fw"
+                aria-controls="#picker-editor"
+              />{" "}
+            </div>
+            <h5 className="fw-bold mb-3">Support 24/7</h5>
+            <p className="text-muted mb-0">
+              Laudantium totam quas cumque pariatur at doloremque hic quos quia
+              eius. Reiciendis optio minus mollitia rerum labore facilis
+              inventore voluptatem ad, quae quia sint. Ullam.
+            </p>
+          </div>
+          <div className="col-md-4 mb-5 mb-md-0">
+            <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
+              {" "}
+              <i
+                className="fas fa-shield-alt fa-lg text-white fa-fw"
+                aria-controls="#picker-editor"
+              />{" "}
+            </div>
+            <h5 className="fw-bold mb-3">Safe and solid</h5>
+            <p className="text-muted mb-0">
+              Eum nostrum fugit numquam, voluptates veniam neque quibusdam ullam
+              aspernatur odio soluta, quisquam dolore animi mollitia a omnis
+              praesentium, expedita nobis!
+            </p>
+          </div>
+          <div className="col-md-4 mb-5 mb-md-0">
+            <div className="p-3 bg-primary rounded-4 shadow-2-strong d-inline-block mb-4">
+              {" "}
+              <i
+                className="fas fa-shipping-fast fa-lg text-white fa-fw"
+                aria-controls="#picker-editor"
+              />{" "}
+            </div>
+            <h5 className="fw-bold mb-3">Extremely fast</h5>
+            <p className="text-muted mb-0">
+              Enim cupiditate, minus nulla dolor cumque iure eveniet facere
+              ullam beatae hic voluptatibus dolores exercitationem? Facilis
+              debitis aspernatur amet nisi?
+            </p>
           </div>
         </div>
       </section>
