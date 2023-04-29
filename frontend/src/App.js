@@ -7,6 +7,7 @@ import Navbar from './components/main/Navbar';
 import Signup from './components/main/Signup';
 import Main from './components/main';
 import Feedback from './components/Feedback';
+import Authenticate from './components/main/Authenticate';
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path='home' element={<Home/>}/>
           <Route path='login' element={<Login/>}/>
           <Route path='signup' element={<Signup/>}/>
+          <Route path='authenticate' element={<Authenticate/>}/>
           <Route path='feedback' element={<Feedback/>}/>
           </Route>
           
