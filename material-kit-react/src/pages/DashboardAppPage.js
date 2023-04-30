@@ -19,6 +19,9 @@ import {
   AppConversionRates,
 } from '../sections/@dashboard/app';
 
+import db from './firebaseConfig';
+import { useState } from 'react';
+
 // ----------------------------------------------------------------------
 
 const { users, orders, products } = cloudData;
@@ -26,9 +29,25 @@ const { users, orders, products } = cloudData;
 export default function DashboardAppPage() {
   const theme = useTheme();
 
+  const [data, setData] = useState([]);
+
+  const getFirebaseData = () => {
+    const collection = db.collection("product")
+    .onSnapshot((querySnapshot) => {
+      const newData = [];
+      querySnapshot.forEach((doc) => {
+        newData.push(doc.data());
+      });
+      setData(newData);
+    });
+  };
+
+  useEffect(() => {
+    getFirebaseData();
+  }, []);
+
   return (
-    <>
-    
+    <>    
       <Helmet>
         <title> Dashboard | Minimal UI </title>
       </Helmet>
