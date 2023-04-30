@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import db from '../../firebaseConfig';
+import { useState } from 'react';
 
 
 const ConfigureDashboard = () => {
