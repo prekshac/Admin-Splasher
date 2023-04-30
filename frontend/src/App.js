@@ -8,6 +8,8 @@ import Signup from './components/main/Signup';
 import Main from './components/main';
 import Feedback from './components/Feedback';
 import Authenticate from './components/main/Authenticate';
+import User from './components/user';
+import ConfigureDashboard from './components/user/ConfigureDashboard';
 
 
 
@@ -17,16 +19,19 @@ function App() {
       < BrowserRouter>
         <Routes>
 
-          
-          <Route path='/' element={<Navigate to="/main/home"/>}/>
-          <Route path='main' element={<Main/>}>
-          <Route path='home' element={<Home/>}/>
-          <Route path='login' element={<Login/>}/>
-          <Route path='signup' element={<Signup/>}/>
-          <Route path='authenticate' element={<Authenticate/>}/>
-          <Route path='feedback' element={<Feedback/>}/>
+
+          <Route path='/' element={<Navigate to="/main/home" />} />
+          <Route path='main' element={<Main />}>
+            <Route path='home' element={<Home />} />
+            <Route path='login' element={<Login />} />
+            <Route path='signup' element={<Signup />} />
+            <Route path='authenticate' element={<Authenticate />} />
+            <Route path='feedback' element={<Feedback />} />
           </Route>
-          
+          <Route path='user' element={<User />}>
+            <Route path='configure' element={<ConfigureDashboard />} />
+          </Route>
+
 
 
         </Routes>
