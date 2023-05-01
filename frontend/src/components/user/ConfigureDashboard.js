@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-// import db from '../../firebaseConfig';
+import React, { useEffect } from 'react';
+import db from '../../firebaseConfig';
 
 
 const ConfigureDashboard = () => {
@@ -27,4 +27,4 @@ const ConfigureDashboard = () => {
   )
 }
 
-export default ConfigureDashboard
+export default ConfigureDashboard;
