@@ -3,15 +3,12 @@ import './App.css';
 import Home from './components/Home';
 import Login from './components/main/Login'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/main/Navbar';
 import Signup from './components/main/Signup';
 import Main from './components/main';
 import Feedback from './components/Feedback';
 import Authenticate from './components/main/Authenticate';
 import User from './components/user';
 import ConfigureDashboard from './components/user/ConfigureDashboard';
-
-
 
 function App() {
   return (
