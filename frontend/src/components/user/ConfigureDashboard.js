@@ -9,7 +9,7 @@ const ConfigureDashboard = () => {
   const [data, setData] = useState([]);
 
   const getFirebaseData = () => {
-    const q = query(collection(db, 'product'))
+    const q = query(collection(db, 'User'))
     onSnapshot(q, (querySnapshot) => {
       console.log(querySnapshot.docs);
       setData(querySnapshot.docs.map(doc => ({
