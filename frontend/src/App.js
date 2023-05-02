@@ -9,6 +9,8 @@ import Feedback from './components/Feedback';
 import Authenticate from './components/main/Authenticate';
 import User from './components/user';
 import ConfigureDashboard from './components/user/ConfigureDashboard';
+import ManageEntity from './components/user/ManageEntities';
+import EntityManager from './components/user/EntityManager';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           </Route>
           <Route path='user' element={<User />}>
             <Route path='configure' element={<ConfigureDashboard />} />
+            <Route path='manageentity' element={<ManageEntity />} />
+            <Route path='entitymanager' element={<EntityManager />} />
           </Route>
 
 

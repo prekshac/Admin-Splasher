@@ -6,7 +6,7 @@ const ManageEntity = () => {
   const [currentEntity, setCurrentEntity] = useState(JSON.parse(sessionStorage.getItem('entity')));
 
   const fetchEntityData = async () => {
-    const res = await fetch("http://localhost:5000/user/getall");
+    const res = await fetch("http://localhost:5000/entity/getall");
     const data = await res.json();
     console.log(data);
     setEntityList(data);
@@ -27,28 +27,27 @@ const ManageEntity = () => {
   return (
     <div>
       <div className="container">
-        <h3>Logged in as {currentEntity.name}</h3>
-        <h1>User Manager</h1>
-        <hr />
+        
         <table className="table table-striped">
           <thead>
             <tr>
               <th>Name</th>
-              <th>Price</th>
-              <th>Category</th>
               <th>Brand</th>
-              <th colSpan={2} className="text-center">Actions</th>
+              <th>Category</th> 
+              <th>Quantity</th>
+              <th>Price</th>
             </tr>
           </thead>
           <tbody>
             {entityList.map((entity) => (
-              <tr key={entity._id}>
+              <tr key={entity.id}>
                 <td>{entity.name}</td>
                 <td>{entity.price}</td>
                 <td>{entity.category}</td>
                 <td>{entity.brand}</td>
+                <td>{entity.quantity}</td>
                 <td>
-                  <button className="btn btn-danger"onClick={()=> deleteEntity(user._id)}>
+                  <button className="btn btn-danger"onClick={()=> deleteEntity(entity.id)}>
                     <i className="fas fa-trash"></i>
                   </button>
                 </td>

@@ -17,4 +17,19 @@ router.post('/add', (req, res)=> {
     });
 });
 
+router.get('/getall', (req, res)=> {
+    console.log(req.body);
+    // res.send('Response from User Router');
+
+    //to save the data
+    Model.find({}) 
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+});
+
 module.exports= router;
