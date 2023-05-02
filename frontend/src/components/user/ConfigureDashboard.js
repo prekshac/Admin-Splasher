@@ -44,4 +44,4 @@ const ConfigureDashboard = () => {
   )
 }
 
-export default ConfigureDashboard
+export default ConfigureDashboard;
