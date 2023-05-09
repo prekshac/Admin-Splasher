@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Swal from 'sweetalert2'
+import { useFormik } from 'formik'
 
 const ManageEntity = () => {
   const [entityList, setEntityList] = useState([]);
@@ -16,53 +18,62 @@ const ManageEntity = () => {
     fetchEntityData();
   }, []);
 
-  const deleteEntity= async (id)=>{
+  const deleteEntity = async (id) => {
     console.log(id);
-    const res= await fetch('http://localhost:5000/user/delete/' +id, {method: 'DELETE'});
-    if(res.status===200){
+    const res = await fetch('http://localhost:5000/user/delete/' + id, { method: 'DELETE' });
+    if (res.status === 200) {
       fetchEntityData();
     }
   }
+  
+
+  const displayEntities = () => {
+
+    return (
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {entityList.map((entity) => (
+            <tr key={entity.id}>
+              <td>{entity.name}</td>
+              <td>{entity.price}</td>
+              <td>{entity.category}</td>
+              <td>{entity.brand}</td>
+              <td>{entity.quantity}</td>
+              <td>
+                <button className="btn btn-danger" onClick={() => deleteEntity(entity.id)}>
+                  <i className="fas fa-trash"></i>
+                </button>
+              </td>
+              <td>
+                <button className="btn btn-primary" >
+                  <i class="fas fa-edit"></i>
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    );
+
+  }
+
 
   return (
     <div>
       <div className="container">
-        
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Category</th> 
-              <th>Quantity</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {entityList.map((entity) => (
-              <tr key={entity.id}>
-                <td>{entity.name}</td>
-                <td>{entity.price}</td>
-                <td>{entity.category}</td>
-                <td>{entity.brand}</td>
-                <td>{entity.quantity}</td>
-                <td>
-                  <button className="btn btn-danger"onClick={()=> deleteEntity(entity.id)}>
-                    <i className="fas fa-trash"></i>
-                  </button>
-                </td>
-                <td>
-                  <button className="btn btn-primary" >
-                    <i class="fas fa-edit"></i>
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {displayEntities()}
       </div>
     </div>
-  );
+  )
 };
 
 export default ManageEntity;

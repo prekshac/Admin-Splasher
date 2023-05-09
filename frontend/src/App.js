@@ -10,7 +10,7 @@ import Authenticate from './components/main/Authenticate';
 import User from './components/user';
 import ConfigureDashboard from './components/user/ConfigureDashboard';
 import ManageEntity from './components/user/ManageEntities';
-import EntityManager from './components/user/EntityManager';
+import AddEntity from './components/user/AddEntity';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
           <Route path='user' element={<User />}>
             <Route path='configure' element={<ConfigureDashboard />} />
             <Route path='manageentity' element={<ManageEntity />} />
-            <Route path='entitymanager' element={<EntityManager />} />
+            <Route path='addentity' element={<AddEntity />} />
           </Route>
 
 
