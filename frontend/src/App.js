@@ -11,6 +11,7 @@ import User from './components/user';
 import ConfigureDashboard from './components/user/ConfigureDashboard';
 import ManageEntity from './components/user/ManageEntities';
 import AddEntity from './components/user/AddEntity';
+import AddEntityData from './components/user/AddEntityData';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path='configure' element={<ConfigureDashboard />} />
             <Route path='manageentity' element={<ManageEntity />} />
             <Route path='addentity' element={<AddEntity />} />
+            <Route path='addentitydata' element={<AddEntityData />} />
           </Route>
 
 

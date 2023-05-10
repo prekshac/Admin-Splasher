@@ -32,4 +32,19 @@ router.get('/getall', (req, res)=> {
     });
 });
 
+router.put('/update/:id', (req, res)=> {
+    console.log(req.body);
+    // res.send('Response from User Router');
+
+    //to save the data
+    Model.findByIdAndUpdate(req.params.id, req.body, {new: true}) 
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+});
+
 module.exports=router;

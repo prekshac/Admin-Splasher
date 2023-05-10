@@ -10,13 +10,30 @@ const ManageEntity = () => {
   const fetchEntityData = async () => {
     const res = await fetch("http://localhost:5000/entity/getall");
     const data = await res.json();
-    console.log(data);
-    setEntityList(data);
+    console.log(data); 
+    setEntityList(data); 
   };
 
   useEffect(() => {
     fetchEntityData();
   }, []);
+
+  const [selEntity, setSelEntity] = useState(null);
+
+  const [keyValuePair, setKeyValuePair] = useState([]);
+
+  const updateEntity = async (entity) => {
+    console.log(entity);
+    const res = await fetch('http://localhost:5000/entity/update/'+selEntity._id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(entity)
+    });
+    if (res.status === 200) {
+      fetchEntityData();
+    }
+  }
+
 
   const deleteEntity = async (id) => {
     console.log(id);
@@ -25,7 +42,7 @@ const ManageEntity = () => {
       fetchEntityData();
     }
   }
-  
+
 
   const displayEntities = () => {
 
@@ -54,7 +71,7 @@ const ManageEntity = () => {
                 </button>
               </td>
               <td>
-                <button className="btn btn-primary" >
+                <button className="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editEntity" onClick={e => setSelEntity(entity)}>
                   <i class="fas fa-edit"></i>
                 </button>
               </td>
@@ -66,9 +83,45 @@ const ManageEntity = () => {
 
   }
 
+  const updateKey = (e, index) => {
+    // console.log(e.target.value);
+    const updatedKeyValuePair = [...keyValuePair];
+    updatedKeyValuePair[index].key = e.target.value;
+    setKeyValuePair(updatedKeyValuePair);
+    console.log(updatedKeyValuePair);
+  }
+
 
   return (
     <div>
+      <div class="modal fade" id="editEntity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul className="list-group">
+                {
+                  keyValuePair.map((item, index) => (
+                    <li className="list-group-item">
+                      <input type="text" value={item.key} onChange={ e => updateKey(e, index) } />
+                      </li>
+                  ))
+                }
+              </ul>
+
+                <button onClick={e => {setKeyValuePair([...keyValuePair, [{key : '', value: ''}]])}}>Add Field</button>
+              <button onClick={e => updateEntity({keyValuePairs: keyValuePair})}>Update</button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         {displayEntities()}
       </div>
