@@ -5,13 +5,13 @@ import { useFormik } from 'formik'
 const ManageEntity = () => {
   const [entityList, setEntityList] = useState([]);
 
-  const [currentEntity, setCurrentEntity] = useState(JSON.parse(sessionStorage.getItem('entity')));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
   const fetchEntityData = async () => {
-    const res = await fetch("http://localhost:5000/entity/getall");
+    const res = await fetch("http://localhost:5000/entity/getbyuser/" + currentUser._id);
     const data = await res.json();
-    console.log(data); 
-    setEntityList(data); 
+    console.log(data);
+    setEntityList(data);
   };
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const ManageEntity = () => {
               </td>
               <td>
                 <button className="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#editEntity" onClick={e => setSelEntity(entity)}>
-                  <i class="fas fa-edit"></i>
+                  <i className="fas fa-edit"></i>
                 </button>
               </td>
             </tr>
@@ -94,14 +94,14 @@ const ManageEntity = () => {
 
   return (
     <div>
-      <div class="modal fade" id="editEntity" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+      <div className="modal fade" id="editEntity" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" className="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <ul className="list-group">
                 {
                   keyValuePair.map((item, index) => (
@@ -112,12 +112,12 @@ const ManageEntity = () => {
                 }
               </ul>
 
-                <button onClick={e => {setKeyValuePair([...keyValuePair, [{key : '', value: ''}]])}}>Add Field</button>
+                <button onClick={e => {setKeyValuePair([...keyValuePair, {key : '', value: ''}])}}>Add Field</button>
               <button onClick={e => updateEntity({keyValuePairs: keyValuePair})}>Update</button>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary">Save changes</button>
             </div>
           </div>
         </div>

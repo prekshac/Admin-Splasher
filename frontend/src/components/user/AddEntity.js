@@ -1,12 +1,15 @@
 import { useFormik } from 'formik'
-import React from 'react'
+import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 
 const AddEntity = () => {
 
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
   const entityManagerForm= useFormik({
     initialValues:{
       name: '',
+      user: currentUser._id,
       collectionName: '',  
       keyValuePairs: '',
       realtime: false,

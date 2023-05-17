@@ -19,7 +19,7 @@ const AddEntityData = () => {
     fetchEntityData();
   }, []);
 
-    // productdata store form
+  
 
 
   return (
