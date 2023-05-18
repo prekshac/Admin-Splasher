@@ -1,6 +1,58 @@
 import React from 'react'
+import Swal from 'sweetalert2';
+import app_config from '../../config';
+import { useNavigate } from 'react-router-dom';
+import { useUserContext } from '../../context/UserProvider';
+import { useFormik } from 'formik';
 
 const Login = () => {
+
+  const url = app_config.apiUrl;
+  const navigate = useNavigate();
+  const { themeColor, themeColorLight, title } = app_config;
+  const {setLoggedIn} = useUserContext();
+
+  const loginform = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    onSubmit: async (values) => {
+      console.log(values);
+      const res = await fetch(`${url}/user/auth`, {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log(res.status);
+      if (res.status === 200) {
+        const data = (await res.json()).result;
+        // console.log("Login Successful");
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Login Successful!!",
+        });
+        setLoggedIn(true);
+        if (data.role === "admin") {
+          sessionStorage.setItem("admin", JSON.stringify(data));
+          navigate("/admin/dashboard");
+        } else {
+          sessionStorage.setItem("user", JSON.stringify(data));
+          navigate("/user/profile");
+        }
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Login Failed!!",
+        });
+      }
+    },
+  });
+
   return (
     <>
   {/* Section: Design Block */}
@@ -44,39 +96,16 @@ const Login = () => {
           />
           <div className="card bg-glass">
             <div className="card-body px-4 py-5 px-md-5">
-              <form>
+              <form onSubmit={loginform.handleSubmit}>
                 {/* 2 column grid layout with text inputs for the first and last names */}
-                <div className="row">
-                  <div className="col-md-6 mb-4">
-                    <div className="form-outline">
-                      <input
-                        type="text"
-                        id="form3Example1"
-                        className="form-control"
-                      />
-                      <label className="form-label" htmlFor="form3Example1">
-                        First name
-                      </label>
-                    </div>
-                  </div>
-                  <div className="col-md-6 mb-4">
-                    <div className="form-outline">
-                      <input
-                        type="text"
-                        id="form3Example2"
-                        className="form-control"
-                      />
-                      <label className="form-label" htmlFor="form3Example2">
-                        Last name
-                      </label>
-                    </div>
-                  </div>
-                </div>
+                
                 {/* Email input */}
                 <div className="form-outline mb-4">
                   <input
                     type="email"
-                    id="form3Example3"
+                    id="email"
+                    onChange={loginform.handleChange}
+                    value={loginform.values.email}
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example3">
@@ -87,7 +116,9 @@ const Login = () => {
                 <div className="form-outline mb-4">
                   <input
                     type="password"
-                    id="form3Example4"
+                    id="password"
+                    onChange={loginform.handleChange}
+                    value={loginform.values.password}
                     className="form-control"
                   />
                   <label className="form-label" htmlFor="form3Example4">

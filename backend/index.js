@@ -6,12 +6,12 @@ const entityRouter = require('./routers/entityRouter');
 const cors = require('cors');
 
 app.use(cors({
-    origin: [ 'http://localhost:3000,3001']
+    origin: [ 'http://localhost:3000', 'http://localhost:3001']
 }));
 
 app.use(express.json());
 
-app.use('/users', userRouter);
+app.use('/user', userRouter);
 app.use('/entity', entityRouter);
 
 
