@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <>
   {/* Navbar */}
-  <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: themeColor}}>
+  <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: 'black'}}>
     {/* Container wrapper */}
     <div className="container-fluid">
       {/* Toggle button */}
