@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
+import './AddEntityData.css';
 
 const AddEntityData = () => {
 
@@ -35,10 +36,10 @@ const AddEntityData = () => {
 
   return (
     <div>
-      <div className="card">
+      <div className="card" style={{marginTop: '10vh', marginLeft: '20%', marginRight:'20%'}}>
         <div className="card-content">
-          <h4 color='black'>Add entity: </h4>
-          <form onSubmit={handleSubmit}>
+          <h4 >Add Entity: </h4>
+          <form className="entity-form" onSubmit={handleSubmit}>
             <label htmlFor="selectBox">Select an entity option:</label>
             <select id="selectBox" value={selectedOption} onChange={e => setSelEntity(e.target.value)} className='form-control'>
               <option value="">-- Choose --</option>
@@ -53,8 +54,8 @@ const AddEntityData = () => {
 
 
           </form>
-          <h4 color='black'>Add entity Data: </h4>
-          <form>
+          <h4>Add Entity Data: </h4>
+          <form className="entityData-form">
             {
               selEntity &&
               entityList.find(entity => entity.collectionName === selEntity).keyValuePairs.map(pair => (

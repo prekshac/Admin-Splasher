@@ -29,28 +29,30 @@ const Home = () => {
               }}
               aria-controls="#picker-editor"
             >
-              <div
-                className="card mx-4 mx-md-5 text-center shadow-5-strong"
-                style={{
-                  marginTop:"110px",
-                  background: "hsla(0, 0%, 100%, 0.7)",
-                  backdropFilter: "blur(-500px)"
-                }}
-              >
-                <div className="card-body px-4 py-5 px-md-5">
-                  <h1 className="display-3 fw-bold ls-tight mb-4">
-                    {" "}
-                    <span>The best offer on the market</span> <br />{" "}
-                    <span className="text-primary">for your business</span>{" "}
-                  </h1>{" "}
-                  <a
-                    className="btn  btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
+              <a
+                    className="btn  btn-primary btn-lg offset-md-10"
                     href="#"
                     role="button"
                     aria-controls="#picker-editor"
                   >
                     Login/Signup
-                  </a>{" "}
+                  </a>
+              <div
+                className="card mx-4 mx-md-5 text-center shadow-5-strong"
+                style={{
+                  marginTop:"70px",
+                  background: "hsla(0, 0%, 100%, 0.7)",
+                  backdropFilter: "blur(-500px)"
+                }}
+              >
+                <div className="card-body px-4 py-5 px-md-5">
+                  <h6 className=" card-content fw-bold ls-tight ">
+                    {" "}
+                    <span className='heading'>Welcome to Admin Splasher</span> <br />{" "}
+                    <span 
+                    className="  text-primary">where you can create and personalize your own dashboards!</span>{" "}
+                  </h6>{" "}
+                  {" "}
                   <a
                     className="btn  btn-link btn-lg py-3 px-5 mb-2 mb-md-0"
                     data-ripple-color="primary"

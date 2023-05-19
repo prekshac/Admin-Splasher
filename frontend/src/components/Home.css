@@ -4,3 +4,14 @@
     text-align: center;
     background-color: black;
 }
+.btn{
+    margin-top: 15px;
+}
+.card-content{
+    font-size: xx-large;
+    font-weight: bold;
+}
+.heading{
+    font-size: larger;
+    font-weight: bold;
+}
