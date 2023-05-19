@@ -53,15 +53,7 @@ const Home = () => {
                     className="  text-primary">where you can create and personalize your own dashboards!</span>{" "}
                   </h6>{" "}
                   {" "}
-                  <a
-                    className="btn  btn-link btn-lg py-3 px-5 mb-2 mb-md-0"
-                    data-ripple-color="primary"
-                    href="#"
-                    role="button"
-                    aria-controls="#picker-editor"
-                  >
-                    Learn more
-                  </a>
+
                 </div>
               </div>
             </div>

@@ -31,3 +31,17 @@
     background-color: #ad85d3ce;
     margin-bottom: 8px;
 }
+
+.entity-head{
+    font-size: 20px;
+    color: #260031;
+}
+.entityData-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: large;
+    color: #260031;
+}

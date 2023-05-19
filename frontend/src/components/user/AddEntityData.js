@@ -36,11 +36,11 @@ const AddEntityData = () => {
 
   return (
     <div>
-      <div className="card" style={{marginTop: '10vh', marginLeft: '20%', marginRight:'20%'}}>
+      <div className="card" style={{marginTop: '10vh', marginLeft: '30%', marginRight:'30%'}}>
         <div className="card-content">
           <h4 >Add Entity: </h4>
           <form className="entity-form" onSubmit={handleSubmit}>
-            <label htmlFor="selectBox">Select an entity option:</label>
+            <label htmlFor="selectBox" className='entity-head'>Select an entity option:</label>
             <select id="selectBox" value={selectedOption} onChange={e => setSelEntity(e.target.value)} className='form-control'>
               <option value="">-- Choose --</option>
               {
@@ -54,7 +54,7 @@ const AddEntityData = () => {
 
 
           </form>
-          <h4>Add Entity Data: </h4>
+          <h4 className='entity-data'>Add Entity Data: </h4>
           <form className="entityData-form">
             {
               selEntity &&
