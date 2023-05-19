@@ -56,6 +56,7 @@ const Navbar = () => {
               Feedback
             </NavLink>
           </li>
+          
         </ul>
         {/* Left links */}
       </div>

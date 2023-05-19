@@ -2,6 +2,7 @@ import React from 'react';
 import './Home.css';
 
 const Home = () => {
+  
   return (
 
     <div>
@@ -38,7 +39,7 @@ const Home = () => {
                     Login/Signup
                   </a>
               <div
-                className="card mx-4 mx-md-5 text-center shadow-5-strong"
+                className="card1 mx-4 mx-md-5 text-center shadow-5-strong"
                 style={{
                   marginTop:"70px",
                   background: "hsla(0, 0%, 100%, 0.7)",
@@ -48,7 +49,7 @@ const Home = () => {
                 <div className="card-body px-4 py-5 px-md-5">
                   <h6 className=" card-content fw-bold ls-tight ">
                     {" "}
-                    <span className='heading'>Welcome to Admin Splasher</span> <br />{" "}
+                    <span className='heading'>Welcome to Admin Splasher, </span> <br />{" "}
                     <span 
                     className="  text-primary">where you can create and personalize your own dashboards!</span>{" "}
                   </h6>{" "}
@@ -66,10 +67,25 @@ const Home = () => {
         {/**/}
       </div>
 
-
-
-
+      <div id='about'> 
+        <div className='card2'>
+          <div className='card-content'>
+            <div className='heading'> About us</div>
+              <div className='content'>
+                 <div class=" text2 row container-fluid">
+                    <div class=" about-info col-md-8">
+                        At Admin Splasher, we believe in the power of data visualization and providing you with the tools to make informed decisions. With our customizable dashboards, you have the freedom to design a visual representation of your data that suits your unique needs.
+                    </div>
+                    <div class="col-md-4">
+                      <p>image space</p>
+                    </div>
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  
 
   )
 }

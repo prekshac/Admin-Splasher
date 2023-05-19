@@ -37,7 +37,7 @@ const ManageEntity = () => {
 
   const deleteEntity = async (id) => {
     console.log(id);
-    const res = await fetch('http://localhost:5000/user/delete/' + id, { method: 'DELETE' });
+    const res = await fetch('http://localhost:5000/entity/delete/' + selEntity._id, { method: 'DELETE' });
     if (res.status === 200) {
       fetchEntityData();
     }
@@ -66,7 +66,7 @@ const ManageEntity = () => {
               <td>{entity.brand}</td>
               <td>{entity.quantity}</td>
               <td>
-                <button className="btn btn-danger" onClick={() => deleteEntity(entity.id)}>
+                <button className="btn btn-danger" onClick={() => deleteEntity(entity._id)}>
                   <i className="fas fa-trash"></i>
                 </button>
               </td>
