@@ -49,7 +49,7 @@ const Home = () => {
                 <div className="card-body px-4 py-5 px-md-5">
                   <h6 className=" card-content fw-bold ls-tight ">
                     {" "}
-                    <span className='heading'>Welcome to Admin Splasher, </span> <br />{" "}
+                    <span className='heading1'>Welcome to Admin Splasher, </span> <br />{" "}
                     <span 
                     className="  text-primary">where you can create and personalize your own dashboards!</span>{" "}
                   </h6>{" "}
@@ -69,8 +69,8 @@ const Home = () => {
 
       <div id='about'> 
         <div className='card2'>
-          <div className='card-content'>
-            <div className='heading'> About us</div>
+          <div className='card-content2'>
+            <div className='heading2'> About us</div>
               <div className='content'>
                  <div class=" text2 row container-fluid">
                     <div class=" about-info col-md-8">
@@ -84,7 +84,33 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
+
+
+      <div id='features'> 
+        <div className='card-3 '>
+          <div className='card-content3'>
+            <div className='heading3'> 
+              Features
+            </div>
+            <div className='content3'>
+                 
+              <div class=" features col-md-6">
+                <h5 className='fw-bold'> Key features of our dashboards include:</h5>
+                <ul >
+                  <li>Customizable charts and graphs</li>
+                  <li>Visualization Options</li>
+                  <li>Interactive Data</li>
+                  <li>Easy to use</li>
+                  <li>Secure</li>
+                  <li>Responsive Design</li>
+                </ul>
+               </div>
+                    
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
   
 
   )

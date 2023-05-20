@@ -45,7 +45,7 @@ const Signup = () => {
   });
 
   return (
-    <section className="vh-100" style={{ backgroundColor: "#ccc" }}>
+    <section className="vh-100" style={{ backgroundColor: "#934793" }}>
       <div className="container h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-xl-9">
@@ -54,10 +54,10 @@ const Signup = () => {
               <div className="card-body">
                 <form onSubmit={signupForm.handleSubmit}>
                   <div className="row align-items-center pt-4 pb-3">
-                    <div className="col-md-3 ps-5">
+                    <div className="col-md-6 ps-2">
                       <h6 className="mb-0">Full name</h6>
                     </div>
-                    <div className="col-md-9 pe-5">
+                    <div className="col-md-6 pe-2">
                       <input
                         type="text"
                         className="form-control form-control-lg"
@@ -69,10 +69,10 @@ const Signup = () => {
                   </div>
 
                   <div className="row align-items-center py-3">
-                    <div className="col-md-3 ps-5">
+                    <div className="col-md-6 ps-2">
                       <h6 className="mb-0">Email address</h6>
                     </div>
-                    <div className="col-md-9 pe-5">
+                    <div className="col-md-6 pe-2">
                       <input
                         type="email"
                         className="form-control form-control-lg"
@@ -84,10 +84,10 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="row align-items-center py-3">
-                    <div className="col-md-3 ps-5">
+                    <div className="col-md-6 ps-2">
                       <h6 className="mb-0">Password</h6>
                     </div>
-                    <div className="col-md-9 pe-5">
+                    <div className="col-md-6 pe-2">
                       <input
                         type="password"
                         className="form-control form-control-lg"
@@ -99,10 +99,10 @@ const Signup = () => {
                     </div>
                   </div>
                   <div className="row align-items-center py-3">
-                    <div className="col-md-3 ps-5">
+                    <div className="col-md-6 ps-2">
                       <h6 className="mb-0">Confirm Password</h6>
                     </div>
-                    <div className="col-md-9 pe-5">
+                    <div className="col-md-6 pe-2">
                       <input
                         type="password"
                         className="form-control form-control-lg"
@@ -115,7 +115,7 @@ const Signup = () => {
                   </div>
 
                   <hr className="mx-n3" />
-                  <div className="px-5 py-4">
+                  <div className="px-6 py-2">
                     <button type="submit" className="btn btn-primary btn-lg">
                       Sign Up ✅
                     </button>

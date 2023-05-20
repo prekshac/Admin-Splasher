@@ -66,24 +66,19 @@ const Login = () => {
     <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
       <div className="row gx-lg-5 align-items-center mb-5">
         <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 10 }}>
-          <h1
-            className="my-5 display-5 fw-bold ls-tight"
-            style={{ color: "hsl(218, 81%, 95%)" }}
-          >
-            The best offer <br />
-            <span style={{ color: "hsl(218, 81%, 75%)" }}>
-              for your business
-            </span>
+          <h1 className=" my-3 display-5 fw-bold ls-tight" style={{ color: "hsl(218, 81%, 95%)" }}>
+            Sign up today,
           </h1>
-          <p
-            className="mb-4 opacity-70"
+          <h2 className= " my-3 fw-bold ls-tight">
+            <span style={{ color: "hsl(218, 81%, 75%)" }}>
+            and start creating your own personalized dashboards!!
+            </span> </h2>
+          <h5
+            className="mb-12 opacity-70 fw-bold"
             style={{ color: "hsl(218, 81%, 85%)" }}
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Temporibus, expedita iusto veniam atque, magni tempora mollitia
-            dolorum consequatur nulla, neque debitis eos reprehenderit quasi ab
-            ipsum nisi dolorem modi. Quos?
-          </p>
+            Take control of your data and visualize it in a way that empowers you to make informed decisions.
+          </h5>
         </div>
         <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
           <div
@@ -125,29 +120,19 @@ const Login = () => {
                     Password
                   </label>
                 </div>
-                {/* Checkbox */}
-                <div className="form-check d-flex justify-content-center mb-4">
-                  <input
-                    className="form-check-input me-2"
-                    type="checkbox"
-                    defaultValue=""
-                    id="form2Example33"
-                    defaultChecked=""
-                  />
-                  <label className="form-check-label" htmlFor="form2Example33">
-                    Subscribe to our newsletter
-                  </label>
-                </div>
+                
+                  
+                
                 {/* Submit button */}
                 <button
                   type="submit"
                   className="btn btn-primary btn-block mb-4"
                 >
-                  Sign up
+                  Sign in
                 </button>
                 {/* Register buttons */}
                 <div className="text-center">
-                  <p>or sign up with:</p>
+                  <p>or sign in with:</p>
                   <button
                     type="button"
                     className="btn btn-link btn-floating mx-1"

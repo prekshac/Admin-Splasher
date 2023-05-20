@@ -1,0 +1,36 @@
+.card{
+    
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.card-header{
+    
+    color: black;
+    margin-left: 60px;
+    margin-right: 50px;
+}
+.card-body{
+    color: black;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+.btn{
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-bottom: 30px;
+    background-color: rgb(106, 37, 202);
+    color: whitesmoke ;
+    font-weight: bold;
+    box-shadow: 30px(0,0,0,0.5);
+}
+.label{
+    color: black;
+    font-weight: bold;
+}
+.form-div{
+    margin-left: 20px;
+    margin-right: 90px;
+}
+#apiKey, #authDomain, #projectId, #storageBucket, #messagingSenderId, #appId, #appName{
+    border: black;
+}
