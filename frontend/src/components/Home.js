@@ -35,6 +35,10 @@ const Home = () => {
                     href="#"
                     role="button"
                     aria-controls="#picker-editor"
+                    margin-left="90%"
+                    style={{ color: "hsl(218, 81%, 85%)" }}
+                    margin-right="10%"
+                    
                   >
                     Login/Signup
                   </a>
@@ -59,9 +63,7 @@ const Home = () => {
               </div>
             </div>
             {/* Background image */}
-            <div className="container">
-              
-            </div>
+            
           </section>
         </section>
         {/**/}
@@ -69,12 +71,18 @@ const Home = () => {
 
       <div id='about'> 
         <div className='card2'>
-          <div className='card-content2'>
+          <div className='card-content2' style={{
+            backgroundColor: "#934793"
+            
+          }}>
             <div className='heading2'> About us</div>
               <div className='content'>
                  <div class=" text2 row container-fluid">
                     <div class=" about-info col-md-8">
-                        At Admin Splasher, we believe in the power of data visualization and providing you with the tools to make informed decisions. With our customizable dashboards, you have the freedom to design a visual representation of your data that suits your unique needs.
+                        At Admin Splasher, we believe in the power of data visualization and providing you with the tools to make informed decisions.
+                        With our customizable dashboards, you have the freedom to design a visual representation of your data that suits your unique needs.
+                        <br></br> <br></br> 
+                        Connect your mobile application to our dashboard and start visualizing your data today!
                     </div>
                     <div class="col-md-4">
                       <p>image space</p>
