@@ -1,11 +1,11 @@
+import React, { useEffect, useState } from 'react';
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography } from '@mui/material';
 // components
-import React from 'react';
-import cloudData from '../dashboardData';
 import Iconify from '../components/iconify';
 // sections
 import {
@@ -19,27 +19,33 @@ import {
   AppCurrentSubject,
   AppConversionRates,
 } from '../sections/@dashboard/app';
-
 import db from './firebaseConfig';
-import { useState } from 'react';
 
+import cloudData from '../dashboardData';
 // ----------------------------------------------------------------------
 
-const { users, orders, products } = cloudData;
+// const { users, orders, products } = cloudData;
 
 export default function DashboardAppPage() {
   const theme = useTheme();
 
   const [data, setData] = useState([]);
 
+  const [userList, setUserList] = useState([]);
+  const [orderList, setOrderList] = useState([]);
+
   const getFirebaseData = () => {
-    const collection = db.collection("product")
-    .onSnapshot((querySnapshot) => {
-      const newData = [];
-      querySnapshot.forEach((doc) => {
-        newData.push(doc.data());
-      });
-      setData(newData);
+    const q = query(collection(db, 'User'));
+    onSnapshot(q, (querySnapshot) => {
+      console.log(querySnapshot.docs);
+      setUserList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+
+      console.log(userList);
     });
   };
 
@@ -48,7 +54,7 @@ export default function DashboardAppPage() {
   }, []);
 
   return (
-    <>    
+    <>
       <Helmet>
         <title> Dashboard | Minimal UI </title>
       </Helmet>
@@ -60,12 +66,17 @@ export default function DashboardAppPage() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Total Users" total={users.length} icon={'ant-design:android-filled'} />
+            <AppWidgetSummary title="Total Users" total={userList.length} icon={'ant-design:android-filled'} />
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Total Orders" total={orders.length} color="error" icon={'ant-design:apple-filled'} />
-          </Grid>
+          {/* <Grid item xs={12} sm={6} md={3}>
+            <AppWidgetSummary
+              title="Total Orders"
+              total={orders.length}
+              color="error"
+              icon={'ant-design:apple-filled'}
+            />
+          </Grid> */}
 
           <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary title="Item Orders" total={1723315} color="warning" icon={'ant-design:windows-filled'} />
