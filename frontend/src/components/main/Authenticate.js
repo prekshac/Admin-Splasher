@@ -11,7 +11,7 @@ const Authenticate = () => {
         <>
             <div style={{marginTop: '10vh'}} className={"container " + (loginOpen ? '' : 'right-panel-active') } id="container">
                 <div className="form-container sign-up-container">
-                    <form action="#">
+                    <form action="#" className='my-form'>
                         <h1>Create Account</h1>
                         <div className="social-container"> 
                             <a href="#" className="social">

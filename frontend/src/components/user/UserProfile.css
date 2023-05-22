@@ -9,14 +9,12 @@
     margin-left: 60px;
     margin-right: 50px;
 }
-.card-body{
+.my-card-body{
     color: black;
     margin-left: 60px;
     margin-right: 60px;
 }
 .btn{
-    margin-left: 45%;
-    margin-right: 45%;
     margin-bottom: 30px;
     background-color: rgb(106, 37, 202);
     color: whitesmoke ;
