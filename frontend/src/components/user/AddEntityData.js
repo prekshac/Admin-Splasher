@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
+import React, { useState } from "react";
+import { useEffect } from "react";
 
 const AddEntityData = () => {
-
   const [entityList, setEntityList] = useState([]);
 
   // const [currentEntity, setCurrentEntity] = useState(JSON.parse(sessionStorage.getItem('entity')));
@@ -19,14 +18,7 @@ const AddEntityData = () => {
     fetchEntityData();
   }, []);
 
-  
+  return <div></div>;
+};
 
-
-  return (
-    <div>
-
-    </div>
-  )
-}
-
-export default AddEntityData
+export default AddEntityData;
