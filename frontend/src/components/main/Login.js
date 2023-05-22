@@ -4,6 +4,8 @@ import app_config from '../../config';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../../context/UserProvider';
 import { useFormik } from 'formik';
+import { MDBInput } from 'mdb-react-ui-kit';
+
 
 const Login = () => {
 
@@ -65,7 +67,7 @@ const Login = () => {
     />
     <div className="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
       <div className="row gx-lg-5 align-items-center mb-5">
-        <div className="col-lg-6 mb-5 mb-lg-0" style={{ zIndex: 10 }}>
+        <div className="col-lg-6 mb-5 mb-lg-0 mt-1" style={{ zIndex: 10 }}>
           <h1 className=" my-3 display-5 fw-bold ls-tight" style={{ color: "hsl(218, 81%, 95%)" }}>
             Sign up today,
           </h1>
@@ -90,36 +92,14 @@ const Login = () => {
             className="position-absolute shadow-5-strong"
           />
           <div className="card bg-glass">
-            <div className="card-body px-4 py-5 px-md-5">
+            <div className="card-body ">
               <form onSubmit={loginform.handleSubmit}>
                 {/* 2 column grid layout with text inputs for the first and last names */}
                 
                 {/* Email input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="email"
-                    id="email"
-                    onChange={loginform.handleChange}
-                    value={loginform.values.email}
-                    className="form-control"
-                  />
-                  <label className="form-label" htmlFor="form3Example3">
-                    Email address
-                  </label>
-                </div>
+                <MDBInput label='E-mail' id='email' onChange={loginform.handleChange} value={loginform.values.email} type='email' />
                 {/* Password input */}
-                <div className="form-outline mb-4">
-                  <input
-                    type="password"
-                    id="password"
-                    onChange={loginform.handleChange}
-                    value={loginform.values.password}
-                    className="form-control"
-                  />
-                  <label className="form-label" htmlFor="form3Example4">
-                    Password
-                  </label>
-                </div>
+                <MDBInput label='Password' id='password'onChange={loginform.handleChange} value={loginform.values.password} type='password' />
                 
                   
                 

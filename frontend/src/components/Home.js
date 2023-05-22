@@ -71,10 +71,8 @@ const Home = () => {
 
       <div id='about'> 
         <div className='card2'>
-          <div className='card-content2' style={{
-            backgroundColor: "#934793"
-            
-          }}>
+          <div className='card-content2' 
+          >
             <div className='heading2'> About us</div>
               <div className='content'>
                  <div class=" text2 row container-fluid">

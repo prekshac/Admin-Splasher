@@ -28,7 +28,7 @@ const UserProfile = () => {
     <div class="card">
     <div className='ps-2 pe-2 fw-bold'> <h4 className='card-header row align-items-center'>FIREBASE DETAILS:</h4> 
     <form onSubmit={handleSubmit}>
-      <div className='card-body'>
+      <div className='card-body my-card-body'>
       <div className='form-div row align-items-center  '>
         <div className='label col-md-6 '>
         <label htmlFor="apiKey">API Key:</label>
