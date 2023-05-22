@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.card-content h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #260031;
+}
+.entity-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#selectBox{
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #260031;
+}
+.card-content button{
+    color: #260031;
+    background-color: #ad85d3ce;
+    margin-bottom: 8px;
+}
+
+.entity-head{
+    font-size: 20px;
+    color: #260031;
+}
+.entityData-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: large;
+    color: #260031;
+}

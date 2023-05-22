@@ -13,7 +13,7 @@ const Authenticate = () => {
                 <div className="form-container sign-up-container">
                     <form action="#">
                         <h1>Create Account</h1>
-                        <div className="social-container">
+                        <div className="social-container"> 
                             <a href="#" className="social">
                                 <i className="fab fa-facebook-f" />
                             </a>
@@ -71,22 +71,7 @@ const Authenticate = () => {
                     </div>
                 </div>
             </div>
-            <footer>
-                <p>
-                    Created with <i className="fa fa-heart" /> by
-                    <a target="_blank" href="https://florin-pop.com">
-                        Florin Pop
-                    </a>
-                    - Read how I created this and how you can join the challenge
-                    <a
-                        target="_blank"
-                        href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/"
-                    >
-                        here
-                    </a>
-                    .
-                </p>
-            </footer>
+           
         </>
 
     )

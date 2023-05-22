@@ -1,11 +1,11 @@
 import {initializeApp} from "firebase/app";
+import "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
-
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCv6upASkXMkRpKkeEgax6AXzBGZ4Ithh4",
+  apiKey: "AIzaSyCv6upASkXMkRpKkeEgax6AXzBGZ4Ithh4",
   authDomain: "adminsplasher.firebaseapp.com",
   projectId: "adminsplasher",
   storageBucket: "adminsplasher.appspot.com",
@@ -14,7 +14,7 @@ const firebaseConfig = {
   measurementId: "G-QXQX1RY85W"
 };
 
+initializeApp(firebaseConfig);
 
-const app=initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore();
 export default db;

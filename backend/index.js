@@ -24,6 +24,9 @@ app.get('/home', (req, res)=>{
 app.get('/add', (req, res)=>{
     res.send('Response from add');
 });
+app.get('/delete', (req, res)=>{
+    res.send('Response from delete');
+});
 app.get('/getall', (req, res)=>{
     res.send('Get all responding');
 });

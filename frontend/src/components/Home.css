@@ -2,4 +2,49 @@
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+    background-color: black;
+}
+
+.card-content{
+    font-size: xx-large;
+    font-weight: bold;
+}
+.heading{
+    font-size: larger;
+    font-weight: bold;
+}
+.about-info{
+    font-size: large;
+    font-weight: bold;
+    color: #272727;
+    padding-left: 80px;
+    padding-right: 90px;
+    padding-top: 30px;
+}
+.heading2{
+    font-size: xx-large;
+    font-weight: bold;
+    color: #272727;
+    padding-left:43%;
+
+}
+.about {
+    margin-top: 10%;
+    margin-bottom: 30px;
+}
+.heading3{
+    font-size: xx-large;
+    font-weight: bold;
+    color: #272727;
+    padding-left:45%;
+    padding-top: 100px;
+}
+.features{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: medium;
+    font-weight: bold;
+    color: #272727;
+    padding-left: 80px;
+    padding-right: 90px;
 }
