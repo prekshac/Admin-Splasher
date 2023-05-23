@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // @mui
 import {
   Card,
@@ -30,6 +30,7 @@ import Scrollbar from '../components/scrollbar';
 import { UserListHead, UserListToolbar } from '../sections/@dashboard/user';
 // mock
 import USERLIST from '../_mock/user';
+import useAppContext from '../context/AppContext';
 
 // ----------------------------------------------------------------------
 
@@ -87,6 +88,20 @@ export default function UserPage() {
   const [filterName, setFilterName] = useState('');
 
   const [rowsPerPage, setRowsPerPage] = useState(5);
+
+  const calledOnce = useRef(true);
+
+  const { getDataFromFirebase, storeDataToFirebase } = useAppContext();
+
+  useEffect(() => {
+    if(calledOnce.current){
+      calledOnce.current = false;
+      getDataFromFirebase('User', (data) => {
+        console.log(data);
+      });
+    }
+  }, [])
+  
 
   const handleOpenMenu = (event) => {
     setOpen(event.currentTarget);

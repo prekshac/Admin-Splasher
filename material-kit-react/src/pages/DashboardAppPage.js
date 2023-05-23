@@ -19,9 +19,10 @@ import {
   AppCurrentSubject,
   AppConversionRates,
 } from '../sections/@dashboard/app';
-import db from './firebaseConfig';
 
 import cloudData from '../dashboardData';
+
+import db from '../firebaseConfig';
 // ----------------------------------------------------------------------
 
 // const { users, orders, products } = cloudData;
