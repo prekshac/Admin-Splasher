@@ -1,6 +1,8 @@
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
+import { MDBInput } from 'mdb-react-ui-kit';
+
 
 const AddEntity = () => {
 
@@ -43,28 +45,16 @@ const AddEntity = () => {
 
 
   return (
-    <section className="vh-100" style={{ backgroundColor: "#2779e2" }}>
+    <section className="vh-100" >
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-xl-9">
-        <h1 className="text-white mb-4">Manage Entities</h1>
+        <h2 className="display-4 text-center mb-3 fw-bold">Add Entity</h2>
         <div className="card" style={{ borderRadius: 15 }}>
           <div className="card-body">
             <form onSubmit={entityManagerForm.handleSubmit}>
-            <div className="row align-items-center pt-4 pb-3">
-              <div className="col-md-4 ps-5">
-                <h6 className="mb-0">Name</h6>
-              </div>
-              <div className="col-md-6 pe-5">
-                <input 
-                type="text" 
-                className="form-control form-control-lg" 
-                id="name"
-                value={entityManagerForm.values.name}
-                onChange={entityManagerForm.handleChange}
-                />
-              </div>
-            </div>
+            <MDBInput label='Name' id='name' type='text' value={entityManagerForm.values.Name}
+                onChange={entityManagerForm.handleChange}/>
             
             <div className="row align-items-center py-3">
               <div className="col-md-4 ps-5">
