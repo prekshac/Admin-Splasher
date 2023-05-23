@@ -24,8 +24,8 @@ const UserProfile = () => {
   };
 
   return (
-    <div>
-    <div class="card">
+    <div >
+    <div class="upcard">
     <div className='ps-2 pe-2 fw-bold'> <h4 className='card-header row align-items-center'>FIREBASE DETAILS:</h4> 
     <form onSubmit={handleSubmit}>
       <div className='card-body my-card-body'>
@@ -137,7 +137,7 @@ const UserProfile = () => {
     </form>
     </div>
 
-    <button type="submit" className='btn'>Submit</button>
+    <button type="submit" className='upbtn'>Submit</button>
     </div>
     </div>
   );

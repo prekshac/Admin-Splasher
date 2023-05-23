@@ -4,18 +4,18 @@ import Rating from 'react-rating'
 const Feedback = () => {
   return (
     <div><section style={{ backgroundColor: "#ffffff" }}>
-    <div className="container my-5 py-5 text-dark">
-      <div className="row d-flex justify-content-center">
-        <div className="col-md-10 col-lg-8 col-xl-6">
-          <div className="card">
+    <div className="container my-5 py-5 text-dark" >
+      <div className="row d-flex justify-content-center" >
+        <div className="col-md-12 ">
+          <div className="card" >
             <div className="card-body p-4">
               <div className="d-flex flex-start w-100">
                 <img
                   className="rounded-circle shadow-1-strong me-3"
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(21).webp"
                   alt="avatar"
-                  width={65}
-                  height={65}
+                  width={45}
+                  height={45}
                 />
                 <div className="w-100">
                   <h5>Add a comment</h5>
@@ -55,9 +55,7 @@ const Feedback = () => {
                     </label>
                   </div>
                   <div className="d-flex justify-content-between mt-3">
-                    <button type="button" className="btn btn-success">
-                      Danger
-                    </button>
+                   
                     <button type="button" className="btn btn-danger">
                       Send <i className="fas fa-long-arrow-alt-right ms-1" />
                     </button>

@@ -91,8 +91,8 @@ const Login = () => {
             id="radius-shape-2"
             className="position-absolute shadow-5-strong"
           />
-          <div className="card bg-glass">
-            <div className="card-body ">
+          <div className="card bg-glass" style={{marginLeft:'30px', marginRight:'100px', marginTop: '20px'}}>
+            <div className="card-body " >
               <form onSubmit={loginform.handleSubmit}>
                 {/* 2 column grid layout with text inputs for the first and last names */}
                 
