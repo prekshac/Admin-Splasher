@@ -2,6 +2,7 @@ import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 import { MDBInput } from 'mdb-react-ui-kit';
+import './addentity.css'
 
 
 const AddEntity = () => {
@@ -14,7 +15,7 @@ const AddEntity = () => {
       user: currentUser._id,
       collectionName: '',  
       keyValuePairs: '',
-      realtime: false,
+      realtime: '',
       icon: '',
       createdAt: new Date(),
     },
@@ -45,65 +46,26 @@ const AddEntity = () => {
 
 
   return (
-    <section className="vh-100" >
-  <div className="container h-100">
-    <div className="row d-flex justify-content-center align-items-center h-100">
-      <div className="col-xl-9">
-        <h2 className="display-4 text-center mb-3 fw-bold">Add Entity</h2>
-        <div className="card" style={{ borderRadius: 15 }}>
-          <div className="card-body">
+    <section >
+  <div className="addentity-container">
+    <div className="add-entity-cardmain">
+      <div className="">
+        <h2 className="addentity-heading">Add Entity</h2>
+        <div className="card addentity-card" style={{ borderRadius: 15 }}>
+          <div className="addentity-cardbody">
             <form onSubmit={entityManagerForm.handleSubmit}>
-            <MDBInput label='Name' id='name' type='text' value={entityManagerForm.values.Name}
+            <MDBInput label='Name' id='name' type='text' value={entityManagerForm.values.name}
                 onChange={entityManagerForm.handleChange}/>
-            
-            <div className="row align-items-center py-3">
-              <div className="col-md-4 ps-5">
-                <h6 className="mb-0">Collection Name</h6>
-              </div>
-              <div className="col-md-6 pe-5">
-                <input
-                  type="text"
-                  className="form-control form-control-lg"
-                  id="collectionName"
-                value={entityManagerForm.values.collectionName}
-                onChange={entityManagerForm.handleChange}
-                />
-              </div>
-            </div>
-            <div className="row align-items-center py-3">
-              <div className="col-md-4 ps-5">
-                <h6 className="mb-0">Real-time</h6>
-              </div>
-              <div className="col-md-6 pe-5">
-                <input
-                  type="text"
-                  className="form-control form-control-lg"
-                  id="category"
-                value={entityManagerForm.values.realtime}
-                onChange={entityManagerForm.handleChange}
-                />
-              </div>
-            </div>
-            
-            <div className="row align-items-center py-3">
-              <div className="col-md-8 ps-5">
-                <h6 className="mb-0">Icon</h6>
-              </div>
-              <div className="col-md-12 pe-5">
-                <input
-                  type="image"
-                  className="form-control form-control-lg"
-                  id="icon"
-                value={entityManagerForm.values.icon}
-                onChange={entityManagerForm.handleChange}
-                />
-              </div>
-            </div>
-            
-            <hr className="mx-n3" />
-            <hr className="mx-n3" />
-            <div className="px-5 py-4">
-              <button type="submit" className="btn btn-primary btn-lg">
+            <MDBInput label='CollectionName' id='collectionname' type='text' value={entityManagerForm.values.collectionName}
+                onChange={entityManagerForm.handleChange}/>
+            <MDBInput label='Real-time' id='realtime' type='text' value={entityManagerForm.values.realtime}
+                onChange={entityManagerForm.handleChange}/>
+            <MDBInput label='Icon' id='icon' type='image' value={entityManagerForm.values.icon}
+                onChange={entityManagerForm.handleIconUpload}/>
+
+  
+            <div>
+              <button type="submit" className="addentity-btn btn-primary btn-lg">
                 Submit
               </button>
             </div>
