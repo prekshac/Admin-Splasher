@@ -5,6 +5,52 @@ import app_config from "../../config";
 const { themeColor } = app_config;
 
 const Navbar = () => {
+
+  const { title, themeColor } = app_config;
+  const url = app_config.apiUrl;
+
+  const { loggedIn, setLoggedIn, logout } = useUserContext();
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
+  );
+
+
+  const showAvatar = () => {
+    return (
+      <li className="nav-item dropdown">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img src={currentUser.avatar?`${url}/${currentUser.avatar}` : '/avatar.png'} className="rounded-circle" height={30} />
+        </a>
+        <ul className="dropdown-menu">
+          <li>
+            <NavLink className="dropdown-item" to="/user/profile">
+              Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="dropdown-item" to="/user/mytemplates">
+              My Templates
+            </NavLink>
+          </li>
+          <li>
+            <hr className="dropdown-divider" />
+          </li>
+          <li>
+            <a className="dropdown-item" onClick={logout} type="button">
+              Logout
+            </a>
+          </li>
+        </ul>
+      </li>
+    );
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -77,45 +123,7 @@ const Navbar = () => {
           <div className="d-flex align-items-center">
             {/* Icon */}
            
-            {/* Avatar */}
-            <div className="dropdown">
-              <a
-                className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuAvatar"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                  className="rounded-circle"
-                  height={25}
-                  alt="Black and White Portrait of a Man"
-                  loading="lazy"
-                />
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuAvatar"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">
-                    My profile
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Settings
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Logout
-                  </a>
-                </li>
-              </ul>
-            </div>
+            {showAvatar()}
           </div>
           {/* Right elements */}
         </div>
