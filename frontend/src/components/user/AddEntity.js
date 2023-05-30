@@ -55,8 +55,6 @@ const AddEntity = () => {
     }
 
   });
-
-
   return (
     <section >
   <div className="addentity-container">
