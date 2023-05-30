@@ -22,6 +22,8 @@ import {
   TableContainer,
   TablePagination,
 } from '@mui/material';
+import { collection, onSnapshot, query } from 'firebase/firestore';
+import db from '../firebaseConfig';
 // components
 import Label from '../components/label';
 import Iconify from '../components/iconify';
@@ -31,6 +33,8 @@ import { UserListHead, UserListToolbar } from '../sections/@dashboard/user';
 // mock
 import USERLIST from '../_mock/user';
 import useAppContext from '../context/AppContext';
+
+
 
 // ----------------------------------------------------------------------
 
@@ -93,11 +97,14 @@ export default function UserPage() {
 
   const { getDataFromFirebase, storeDataToFirebase } = useAppContext();
 
+  const [userList, setUserList] = useState([]);
+
   useEffect(() => {
     if(calledOnce.current){
       calledOnce.current = false;
       getDataFromFirebase('User', (data) => {
         console.log(data);
+        setUserList(data);
       });
     }
   }, [])
@@ -193,40 +200,40 @@ export default function UserPage() {
                   onSelectAllClick={handleSelectAllClick}
                 />
                 <TableBody>
-                  {filteredUsers.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                    const { id, name, role, status, company, avatarUrl, isVerified } = row;
-                    const selectedUser = selected.indexOf(name) !== -1;
+                  {userList.map((user) => {
+                    const { id, data } = user;
+                    const selectedUser = selected.indexOf(data.name) !== -1;
 
                     return (
                       <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
                         <TableCell padding="checkbox">
-                          <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, name)} />
+                          <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, data.name)} />
                         </TableCell>
 
                         <TableCell component="th" scope="row" padding="none">
                           <Stack direction="row" alignItems="center" spacing={2}>
-                            <Avatar alt={name} src={avatarUrl} />
+                            <Avatar alt={data.name} />
                             <Typography variant="subtitle2" noWrap>
-                              {name}
+                              {data.name}
                             </Typography>
                           </Stack>
                         </TableCell>
 
-                        <TableCell align="left">{company}</TableCell>
+                        <TableCell align="left">{data.email}</TableCell>
 
-                        <TableCell align="left">{role}</TableCell>
+                        <TableCell align="left">{data.password}</TableCell>
 
-                        <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
+                        {/* <TableCell align="left">{isVerified ? 'Yes' : 'No'}</TableCell>
 
                         <TableCell align="left">
                           <Label color={(status === 'banned' && 'error') || 'success'}>{sentenceCase(status)}</Label>
-                        </TableCell>
+                        </TableCell> */}
 
-                        <TableCell align="right">
+                        {/* <TableCell align="right">
                           <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
                             <Iconify icon={'eva:more-vertical-fill'} />
                           </IconButton>
-                        </TableCell>
+                        </TableCell> */}
                       </TableRow>
                     );
                   })}
