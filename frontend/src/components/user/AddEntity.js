@@ -8,6 +8,17 @@ import './addentity.css'
 const AddEntity = () => {
 
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const iconOptions = [
+    { value: 'fa fa-user', label: 'User' },
+    { value: 'fa fa-user', label: 'User' },
+    { value: 'fa fa-user', label: 'User' },
+    { value: 'fa fa-user', label: 'User' },
+    { value: 'fa fa-user', label: 'User' },
+    { value: 'fa fa-user', label: 'User' },
+  ]
+  const [selectedIcon, setselectedIcon] = useState(iconOptions[0].value)
+
+
 
   const entityManagerForm= useFormik({
     initialValues:{
@@ -20,6 +31,7 @@ const AddEntity = () => {
       createdAt: new Date(),
     },
     onSubmit: async (values)=> {
+      values.icon = selectedIcon;
       console.log(values);
    
     const res= await fetch('http://localhost:5000/entity/add', {
@@ -43,8 +55,6 @@ const AddEntity = () => {
     }
 
   });
-
-
   return (
     <section >
   <div className="addentity-container">
@@ -60,10 +70,13 @@ const AddEntity = () => {
                 onChange={entityManagerForm.handleChange}/>
             <MDBInput label='Real-time' id='realtime' type='text' value={entityManagerForm.values.realtime}
                 onChange={entityManagerForm.handleChange}/>
-            <MDBInput label='Icon' id='icon' type='image' value={entityManagerForm.values.icon}
-                onChange={entityManagerForm.handleIconUpload}/>
-
-  
+              <select className='form-control' onChange={e => setselectedIcon(e.target.value)} value={selectedIcon}>
+                {
+                  iconOptions.map((iconOption, index)=>(
+                    <option key={index} value={iconOption.value}><i className={iconOption.value} aria-hidden="true"></i>  {iconOption.label}</option>
+                  ))
+                }
+              </select>
             <div>
               <button type="submit" className="addentity-btn btn-primary btn-lg">
                 Submit
