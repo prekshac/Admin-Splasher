@@ -4,7 +4,10 @@
     margin-right: 200px;
     margin-bottom: 50px;
     background-color: #dfe3e2be;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1)
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-top: 20px;
 }
 .card-header{
     
@@ -48,6 +51,7 @@
     background-image: url('user1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 
