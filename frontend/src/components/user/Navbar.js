@@ -1,65 +1,23 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import app_config from "../../config";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import app_config from '../../config';
+import { useUserContext } from '../../context/UserProvider';
 
 const { themeColor } = app_config;
 
 const Navbar = () => {
-
   const { title, themeColor } = app_config;
   const url = app_config.apiUrl;
 
   const { loggedIn, setLoggedIn, logout } = useUserContext();
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(sessionStorage.getItem("user"))
-  );
-
-
-  const showAvatar = () => {
-    return (
-      <li className="nav-item dropdown">
-        <a
-          className="nav-link dropdown-toggle"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img src={currentUser.avatar?`${url}/${currentUser.avatar}` : '/avatar.png'} className="rounded-circle" height={30} />
-        </a>
-        <ul className="dropdown-menu">
-          <li>
-            <NavLink className="dropdown-item" to="/user/profile">
-              Profile
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="dropdown-item" to="/user/mytemplates">
-              My Templates
-            </NavLink>
-          </li>
-          <li>
-            <hr className="dropdown-divider" />
-          </li>
-          <li>
-            <a className="dropdown-item" onClick={logout} type="button">
-              Logout
-            </a>
-          </li>
-        </ul>
-      </li>
-    );
-  };
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
   return (
     <>
       {/* Navbar */}
-      <nav
-        className="navbar navbar-expand-lg navbar-dark"
-        style={{ backgroundColor: themeColor }}
-      >
+      <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: themeColor }}>
         {/* Container wrapper */}
-        <div className="container-fluid">
+        <div className="container">
           {/* Toggle button */}
           <button
             className="navbar-toggler"
@@ -118,14 +76,35 @@ const Navbar = () => {
             </ul>
             {/* Left links */}
           </div>
-          {/* Collapsible wrapper */}
-          {/* Right elements */}
-          <div className="d-flex align-items-center">
-            {/* Icon */}
-           
-            {showAvatar()}
+          <div className="dropdown">
+            <a
+              className="dropdown-toggle d-flex align-items-center hidden-arrow"
+              href="#"
+              id="navbarDropdownMenuAvatar"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" className="rounded-circle" height={25} alt="Black and White Portrait of a Man" loading="lazy" />
+            </a>
+            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+              <li>
+                <NavLink className="dropdown-item" to='/user/profile'>
+                  My profile
+                </NavLink>
+              </li>
+              <li>
+                <a className="dropdown-item" href="#">
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item" href="" role='button' onClick={logout}>
+                  Logout
+                </a>
+              </li>
+            </ul>
           </div>
-          {/* Right elements */}
         </div>
         {/* Container wrapper */}
       </nav>

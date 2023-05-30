@@ -10,7 +10,7 @@ const AddEntity = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
   const iconOptions = [
     { value: 'fa fa-user', label: 'User' },
-    { value: 'fa fa-user', label: 'User' },
+    { value: 'fa-solid fa-shopping-cart', label: 'Order' },
     { value: 'fa fa-user', label: 'User' },
     { value: 'fa fa-user', label: 'User' },
     { value: 'fa fa-user', label: 'User' },
@@ -70,6 +70,9 @@ const AddEntity = () => {
                 onChange={entityManagerForm.handleChange}/>
             <MDBInput label='Real-time' id='realtime' type='text' value={entityManagerForm.values.realtime}
                 onChange={entityManagerForm.handleChange}/>
+             
+             <div className="d-flex">
+
               <select className='form-control' onChange={e => setselectedIcon(e.target.value)} value={selectedIcon}>
                 {
                   iconOptions.map((iconOption, index)=>(
@@ -77,6 +80,10 @@ const AddEntity = () => {
                   ))
                 }
               </select>
+              <div className='p-3'>
+                <i className={selectedIcon}></i>
+              </div>
+             </div>
             <div>
               <button type="submit" className="addentity-btn btn-primary btn-lg">
                 Submit
