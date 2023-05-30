@@ -24,7 +24,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div >
+    <div class = "uppage" >
     <div class="upcard">
     <div className='ps-2 pe-2 fw-bold'> <h4 className='card-header row align-items-center'>FIREBASE DETAILS:</h4> 
     <form onSubmit={handleSubmit}>
