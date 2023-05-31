@@ -9,10 +9,8 @@ const AddEntity = () => {
   const iconOptions = [
     { value: 'fa fa-user', label: 'User' },
     { value: 'fa-solid fa-shopping-cart', label: 'Order' },
-    { value: 'fa fa-user', label: 'User' },
-    { value: 'fa fa-user', label: 'User' },
-    { value: 'fa fa-user', label: 'User' },
-    { value: 'fa fa-user', label: 'User' }
+    { value: "fa-solid fa-regular fa-tag", label: 'Offer' },
+    { value: "fa-solid fa-conveyor-belt-arm", label: 'Product' },
   ];
   const [selectedIcon, setselectedIcon] = useState(iconOptions[0].value);
 
@@ -51,7 +49,7 @@ const AddEntity = () => {
   });
   return (
     <section>
-      <div className="addentity-container">
+      <div className="addentity-container" style={{ minHeight: '100vh' }}>
         <div className="add-entity-cardmain">
           <div className="">
             <h2 className="addentity-heading">Add Entity</h2>

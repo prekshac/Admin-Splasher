@@ -3,7 +3,7 @@ import Rating from 'react-rating'
 
 const Feedback = () => {
   return (
-    <div><section style={{ backgroundColor: "#ffffff" }}>
+    <div style={{ minHeight: '100vh' }}><section style={{ backgroundColor: "#ffffff" }} >
     <div className="container my-5 py-5 text-dark" >
       <div className="row d-flex justify-content-center" >
         <div className="col-md-12 ">

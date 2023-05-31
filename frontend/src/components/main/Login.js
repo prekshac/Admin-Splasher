@@ -58,7 +58,7 @@ const Login = () => {
   return (
     <>
   {/* Section: Design Block */}
-  <section className="background-radial-gradient overflow-hidden">
+  <section className="background-radial-gradient overflow-hidden" style={{ minHeight: '100vh' }}>
     <style
       dangerouslySetInnerHTML={{
         __html:

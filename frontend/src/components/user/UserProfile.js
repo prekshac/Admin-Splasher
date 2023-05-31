@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import './UserProfile.css';
 import { useFormik } from 'formik';
-
 const UserProfile = () => {
-  const [apiKey, setApiKey] = useState('');
-  const [authDomain, setAuthDomain] = useState('');
-  const [projectId, setProjectId] = useState('');
-  const [storageBucket, setStorageBucket] = useState('');
-  const [messagingSenderId, setMessagingSenderId] = useState('');
-  const [appId, setAppId] = useState('');
-  const [appName, setappName] = useState('');
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -24,9 +15,23 @@ const UserProfile = () => {
     console.log('App Name:', appName);
   };
 
+const [apiKey, setApiKey] = useState('');
+  const [authDomain, setAuthDomain] = useState('');
+  const [projectId, setProjectId] = useState('');
+  const [storageBucket, setStorageBucket] = useState('');
+  const [messagingSenderId, setMessagingSenderId] = useState('');
+  const [appId, setAppId] = useState('');
+  const [appName, setappName] = useState('');
+
+  
+
   const profileForm = useFormik({
     initialValues: {
-
+      name: '',
+      email: '',
+      password: '',
+      avatar: '',
+    
     }
   });
 

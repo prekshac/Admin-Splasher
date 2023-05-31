@@ -72,8 +72,8 @@ const AddEntityData = () => {
 
 
   return (
-    <div>
-      <div className="card" style={{ marginTop: '10vh', marginLeft: '30%', marginRight: '30%' }}>
+    <div style={{ minHeight: '100vh' }}>
+      <div className="card" style={{ marginTop: '10vh', marginLeft: '30%', marginRight: '30%', minHeight: '50vh' }}>
         <div className="card-content">
           <h4 >Add Entity: </h4>
           <form className="entity-form" onSubmit={handleSubmit}>
