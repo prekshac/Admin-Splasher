@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 
 const User = () => {
   return (
@@ -10,8 +11,9 @@ const User = () => {
         <div className="col-9">
         </div>
       </div> */}
-          <Navbar />
-          <Outlet />
+      <Sidebar />
+      <Navbar />
+      <Outlet />
     </div>
   );
 };

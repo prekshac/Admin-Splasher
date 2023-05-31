@@ -1,26 +1,28 @@
-import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu';
 import React from 'react';
 import './sidebar.css';
+import { NavLink } from 'react-router-dom';
 
-class Example extends React.Component {
-  showSettings (event) {
-    event.preventDefault();
-    
-  }
+const Sidebar = () => {
+  return (
+    <Menu>
+      <div className="sidebar-item">
+        <NavLink id="profile" className="menu-item" to="/user/userprofile">
+          User Profile
+        </NavLink>
+      </div>
+      <div className="sidebar-item">
+        <NavLink id="profile" className="menu-item" to="/user/manageentity">
+          Manage Entity
+        </NavLink>
+      </div>
+      <div className="sidebar-item">
+        <NavLink id="profile" className="menu-item" to="/user/addentitydata">
+          Add Entity Data
+        </NavLink>
+      </div>
+    </Menu>
+  );
+};
 
-  render () {
-    // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
-    return (
-      <Menu>
-        <a id="profile" className="menu-item" href="/userprofile">User Profile</a>
-        <a id="manage-dash" className="menu-item" href="/user/manageentity">Manage Entity</a>
-        <a id="config-dash" className="menu-item" href="/user/configure">Configure Dashboard</a>
-        <a id="addentity" className="menu-item" href="/user/addentity">Add Entity</a>
-        <a id="addentitydata" className="menu-item" href="/user/caddentitydata">Add Entity Data</a>
-       
-        <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
-      </Menu>
-    );
-  }
-}
-export default Example;
+export default Sidebar;
