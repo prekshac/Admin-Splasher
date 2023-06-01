@@ -57,7 +57,7 @@ const AddEntity = () => {
               <div className="addentity-cardbody">
                 <form onSubmit={entityManagerForm.handleSubmit}>
                   <MDBInput label="Name" id="name" type="text" value={entityManagerForm.values.name} onChange={entityManagerForm.handleChange} />
-                  <MDBInput label="CollectionName" id="collectionname" type="text" value={entityManagerForm.values.collectionName} onChange={entityManagerForm.handleChange} />
+                  <MDBInput label="CollectionName" id="collectionName" type="text" value={entityManagerForm.values.collectionName} onChange={entityManagerForm.handleChange} />
                   <MDBInput label="Real-time" id="realtime" type="text" value={entityManagerForm.values.realtime} onChange={entityManagerForm.handleChange} />
 
                   <div className="d-flex">
@@ -70,7 +70,7 @@ const AddEntity = () => {
                     </select>
                     <div className="p-3">
                       <i className={selectedIcon}></i>
-                    </div>
+                      </div>
                   </div>
                   <div>
                     <button type="submit" className="addentity-btn btn-primary btn-lg">

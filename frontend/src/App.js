@@ -16,6 +16,7 @@ import UserProvider from './context/UserProvider';
 import UserProfile from './components/user/UserProfile';
 import UserAuth from './auth/UserAuth';
 import Example from './components/user/Sidebar';
+import Profile from './components/user/Profile';
 
 function App() {
   return (
@@ -39,12 +40,13 @@ function App() {
                 </UserAuth>
               }
             >
-              <Route path="profile" element={<UserProfile />} />
+              <Route path="userprofile" element={<UserProfile />} />
               <Route path="configure" element={<ConfigureDashboard />} />
               <Route path="manageentity" element={<ManageEntity />} />
               <Route path="addentity" element={<AddEntity />} />
               <Route path="addentitydata" element={<AddEntityData />} />
               <Route path="sidebar" element={<Example />} />
+              <Route path="profile" element={<Profile />} />
             </Route>
           </Routes>
         </UserProvider>

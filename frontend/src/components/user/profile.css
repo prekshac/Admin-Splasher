@@ -1,0 +1,49 @@
+.profile-page {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #dcdcdc;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  
+  input[type='text'],
+  input[type='email'],
+  input[type='password'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .profile-btn {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .profile-btn:hover {
+    background: #0056b3;
+  }
+  .profile-heading{
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: black;
+      
+  }
+  

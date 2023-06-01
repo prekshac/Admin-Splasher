@@ -62,7 +62,7 @@ router.put('/update/:id', (req, res)=> {
 router.delete('/delete/:id', (req, res)=> {
     console.log(req.body);
     
-    Model.deleteOne(req.params.id, req.body, {new: true}) 
+    Model.findByIdAndDelete(req.params.id) 
     .then((result) => {
         res.json(result);
     })
