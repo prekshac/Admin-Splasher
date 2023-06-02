@@ -11,11 +11,19 @@ const ConfigFireStore = () => {
   const [firebaseData, setFirebaseData] = useState(null);
 
   const [showUpdateForm, setShowUpdateForm] = useState(false);
+
+  const [authDomain, setAuthDomain] = useState('');
+  const [projectId, setProjectId] = useState('');
+  const [storageBucket, setStorageBucket] = useState('');
+  const [messagingSenderId, setMessagingSenderId] = useState('');
+  const [appId, setAppId] = useState('');
+  const [appName, setappName] = useState('');
+
   
 
   const dbForm = useFormik({
     initialValues: {
-      user: currentUser._id,
+    user: currentUser._id,
     apiKey: '',  
     authDomain: '',  
     projectId: '',
@@ -44,7 +52,7 @@ const ConfigFireStore = () => {
     const res = await fetch(apiUrl+'/dashboard/add', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(profileForm.values),
+      body: JSON.stringify(dbForm.values),
     });
 
     if (res.status === 200) {
@@ -81,7 +89,7 @@ const ConfigFireStore = () => {
                   <label htmlFor="authDomain">Auth Domain:</label>
                 </div>
                 <div className="col-md-6 ">
-                  <input type="text" id="authDomain" value={authDomain} onChange={(e) => setAuthDomain(e.target.value)} required />
+                  <input type="text" id="authDomain" value={dbForm.values.authDomain} onChange={dbForm.handleChange} required />
                 </div>
               </div>
               <div className="form-div row align-items-center">
@@ -89,7 +97,7 @@ const ConfigFireStore = () => {
                   <label htmlFor="projectId">Project ID:</label>
                 </div>
                 <div className="col-md-6 ">
-                  <input type="text" id="projectId" value={projectId} onChange={(e) => setProjectId(e.target.value)} required />
+                  <input type="text" id="projectId" value={dbForm.values.projectId} onChange={dbForm.handleChange} required />
                 </div>
               </div>
               <div className="form-div row align-items-center">
@@ -97,7 +105,7 @@ const ConfigFireStore = () => {
                   <label htmlFor="storageBucket">Storage Bucket:</label>
                 </div>
                 <div className="col-md-6 ">
-                  <input type="text" id="storageBucket" value={storageBucket} onChange={(e) => setStorageBucket(e.target.value)} required />
+                  <input type="text" id="storageBucket" value={dbForm.values.storageBucket} onChange={dbForm.handleChange} required />
                 </div>
               </div>
               <div className="form-div row align-items-center ">
@@ -105,7 +113,7 @@ const ConfigFireStore = () => {
                   <label htmlFor="messagingSenderId">Messaging Sender ID:</label>
                 </div>
                 <div className="col-md-6 ">
-                  <input type="text" id="messagingSenderId" value={messagingSenderId} onChange={(e) => setMessagingSenderId(e.target.value)} required />
+                  <input type="text" id="messagingSenderId" value={dbForm.values.messagingSenderId} onChange={dbForm.handleChange} required />
                 </div>
               </div>
             </div>
@@ -114,14 +122,14 @@ const ConfigFireStore = () => {
         <div className=" ps-2 pe-2 fw-bold">
           {' '}
           <h4 className="card-header row align-items-center">APP DETAILS:</h4>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={dbForm.handleSubmit}>
             <div className="card-body my-card-body">
               <div className="form-div row align-items-center">
                 <div className="label col-md-6 ">
                   <label htmlFor="appId">App ID:</label>
                 </div>
                 <div className="col-md-6 ">
-                  <input type="text" id="appId" value={appId} onChange={(e) => setAppId(e.target.value)} required />
+                  <input type="text" id="appId" value={dbForm.values.appId} onChange={dbForm.handleChange} required />
                 </div>
               </div>
 
@@ -130,7 +138,7 @@ const ConfigFireStore = () => {
                   <label htmlFor="appName">App Name:</label>
                 </div>
                 <div className="col-md-6 ">
-                  <input type="text" id="appName" value={appName} onChange={(e) => setappName(e.target.value)} required />
+                  <input type="text" id="appName" value={dbForm.values.appName} onChange={dbForm.handleChange} required />
                 </div>
               </div>
             </div>
