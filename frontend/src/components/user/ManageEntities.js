@@ -58,20 +58,20 @@ const ManageEntity = () => {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Brand</th>
-            <th>Category</th>
-            <th>Quantity</th>
-            <th>Price</th>
+            <th>Collection Name</th>
+            <th>Created At</th>
+            <th>Real-time</th>
+            
           </tr>
         </thead>
         <tbody>
           {entityList.map((entity) => (
             <tr key={entity.id}>
               <td>{entity.name}</td>
-              <td>{entity.price}</td>
-              <td>{entity.category}</td>
-              <td>{entity.brand}</td>
-              <td>{entity.quantity}</td>
+              <td>{entity.collectionName}</td>
+              <td>{entity.createdAt}</td>
+              <td>{entity.realtime}</td>
+              
               <td>
                 <button
                   className="btn btn-danger"

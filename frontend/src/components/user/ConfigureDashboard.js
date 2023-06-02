@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import db from '../../firebaseConfig';
 import { useState } from 'react';
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore"
+import ConfigFireStore from './configFireStore';
 
 
 const ConfigureDashboard = () => {
@@ -39,7 +40,7 @@ const ConfigureDashboard = () => {
 
   return (
     <div>
-      {displayDocs()}
+      <ConfigFireStore />
     </div>
   )
 }

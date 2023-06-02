@@ -1,4 +1,4 @@
-const Model = require('../models/entityModel');
+const Model = require('../models/dashboardModel');
 const {Router}= require('express');
 const router=Router();
 
@@ -35,7 +35,7 @@ router.get('/getall', (req, res)=> {
 router.get('/getbyuser/:id', (req, res)=> {
     // console.log(req.body);
     //to save the data
-    Model.find({user : req.params.id})
+    Model.findOne({user : req.params.id})
     .then((result) => {
         res.json(result);
     })
@@ -63,6 +63,18 @@ router.delete('/delete/:id', (req, res)=> {
     console.log(req.body);
     
     Model.findByIdAndDelete(req.params.id) 
+    .then((result) => {
+        res.json(result);
+    })
+    .catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+});
+
+router.get('/getbyid/:id', (req, res)=> {
+    
+    Model.findById(req.params.id) 
     .then((result) => {
         res.json(result);
     })

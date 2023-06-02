@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import './AddEntityData.css';
 import db from '../../firebaseConfig';
 import { collection, query, orderBy, onSnapshot, addDoc, setDoc, doc } from "firebase/firestore"
+import { Formik } from 'formik';
 
 const AddEntityData = () => {
   const [entityList, setEntityList] = useState([]);
@@ -30,10 +31,8 @@ const AddEntityData = () => {
     setSelectedOption(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log('Selected option:', selectedOption);
+  const handleSubmit = (formdata) => {
+    console.log(formdata);
   };
 
   const getFirebaseData = () => {
@@ -60,9 +59,18 @@ const AddEntityData = () => {
     })
   }
 
+  const generateInitialValues = () => {
+    const initialValues = {};
+    entityList.find(entity => entity.collectionName === selEntity).keyValuePairs.map(pair => {
+      initialValues[pair.key] = '';
+    })
+    console.log(initialValues);
+    return initialValues;
+  }
+
   const addFirebaseData = async (formdata) => {
     console.log(formdata);
-    addDoc(collection(db, selEntity.collectionName), formdata).then((docRef) => {
+    addDoc(collection(db, selEntity), formdata).then((docRef) => {
       console.log("Document written with ID: ", docRef.id);
 
     })
@@ -70,45 +78,67 @@ const AddEntityData = () => {
 
   }
 
+  const entityFormSubmit = (formdata) => {
+    console.log(formdata);
+  }
+
+
 
   return (
     <div className="card-body1" style={{ minHeight: '100vh' }}>
       <div className="crsd1" >
         <div className="card-content">
           <h4 >Add Entity: </h4>
-          <form className="entity-form" onSubmit={handleSubmit}>
-            <label htmlFor="selectBox" className='entity-head'>Select an entity option:</label>
-            <select id="selectBox" value={selectedOption} onChange={e => setSelEntity(e.target.value)} className='form-control'>
-              <option value="">-- Choose --</option>
-              {
-                entityList.map((entity) => (
-                  <option value={entity.collectionName}>{entity.name}</option>
-                ))
-              }
-            </select>
+          <Formik
+          >
+            <form className="entity-form" onSubmit={Formik.handleSubmit}>
+              <label htmlFor="selectBox" className='entity-head'>Select an entity option:</label>
+              <select id="selectBox" value={selEntity} onChange={e => setSelEntity(e.target.value)} className='form-control'>
+                <option value="">-- Choose --</option>
+                {
+                  entityList.map((entity) => (
+                    <option value={entity.collectionName}>{entity.name}</option>
+                  ))
+                }
+              </select>
 
-            <button type="submit">Submit</button>
+              <button type="submit">Submit</button>
 
 
-          </form>
+            </form>
+          </Formik>
+
+
           <h4 className='entity-data'>Add Entity Data: </h4>
           {/* <Formik initialValues={selEntity ? selEntity.keyValuePairs}> */}
-          <form className="entityData-form">
-            {
-              selEntity &&
-              entityList.find(entity => entity.collectionName === selEntity).keyValuePairs.map(pair => (
-                <>
-                  <label htmlFor={pair.key}>{pair.key}</label>
-                  <input id={pair.key} />
-                </>
-              )
-              )
-            }
+          {
+            selEntity && (
+              <Formik initialValues={generateInitialValues()}
+                onSubmit={entityFormSubmit}>
+                {
+                  ({ values, handleChange, handleBlur, handleSubmit }) => (
+                    <form className="entityData-form" onSubmit={handleSubmit}>
+                      {
+                        selEntity &&
+                        entityList.find(entity => entity.collectionName === selEntity).keyValuePairs.map(pair => (
+                          <>
+                            <label htmlFor={pair.key}>{pair.key}</label>
+                            <input id={pair.key} onChange={handleChange} value={values[pair.key]} />
+                          </>
+                        )
+                        )
+                      }
 
 
-            <button type="button" onClick={e => addFirebaseData('product')}>Add</button>
-          </form>
-          {/* </Formik> */}
+                      <button type="submit" >Add</button>
+                    </form>
+                  )
+                }
+
+              </Formik>
+            )
+          }
+
 
         </div>
       </div>
