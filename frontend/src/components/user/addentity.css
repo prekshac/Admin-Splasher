@@ -1,10 +1,12 @@
 .add-entity-cardmain {
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 110px;
+    margin-right: 650px;
     padding-left: 40px;
     padding-top: 30px;
     padding-bottom: 90px;
-    padding-right: 40px;
+    padding-right: 90px;
+    
+   
     
 }
 #name, #CollectionName, #icon, #realtime{
@@ -15,7 +17,7 @@
 } 
 .addentity-btn{
     margin-bottom: 30px;
-    background-color: rgb(106, 37, 202);
+    background-color: rgba(13, 1, 29, 0.149);
     color: whitesmoke ;
     font-weight: bold;
     box-shadow: 30px(0,0,0,0.5);
@@ -28,18 +30,32 @@
 .addentity-heading{
     font-size: 40px;
     font-weight: bolder;
-    color: #ebe0e0;
+    color: #f8f4f4;
     padding-left:33%;
     text-size-adjust: 100px;
-    margin-top: 5px;
+    margin-top: 80px;
     margin-bottom: 10px;
+    font-family: roboto slab;
 }
 .addentity-cardbody{
     padding-left: 10%;
     padding-right: 15%;
+    background-color: rgba(255, 255, 255, 0);
 }
 .addentity-container{
-    background-image: url("https://c0.wallpaperflare.com/preview/198/135/731/cyber-attack-abstract-access.jpg");
+    background-image: url('user4.jpg');
+    background-repeat: no-repeat;
     background-size: cover;
-    margin-top:0%;
 }
+.addentity-card{
+    background-color: #f8f4f413;
+    border: 2px solid #f9f5f5;
+    margin-top: 90px;
+    margin-left: 300px;
+    margin-right: -300px;
+    /* padding-left: 50px; */
+}
+
+
+    
+

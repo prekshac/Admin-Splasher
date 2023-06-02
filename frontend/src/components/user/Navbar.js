@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import app_config from '../../config';
 import { useUserContext } from '../../context/UserProvider';
+import './Navbar.css';
 
 const { themeColor } = app_config;
 
@@ -15,7 +16,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: themeColor }}>
+      <nav className="navbar navbar-expand-lg navbar-dark" >
         {/* Container wrapper */}
         <div className="container">
           {/* Toggle button */}
@@ -34,34 +35,34 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/* Navbar brand */}
             <a className="navbar-brand mt-2 mt-lg-0" href="#">
-              <img src="/logo.png" height={50} alt="MDB Logo" loading="lazy" />
+              {/* <img src="/logo.png" height={50} alt="MDB Logo" loading="lazy" /> */}
             </a>
             {/* Left links */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/home">
+                {/* <NavLink className="nav-link" to="/main/home">
                   Home
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/login">
+                {/* <NavLink className="nav-link" to="/main/login">
                   Login
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/signup">
+                {/* <NavLink className="nav-link" to="/main/signup">
                   Sign Up
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/main/feedback">
+                {/* <NavLink className="nav-link" to="/main/feedback">
                   Feedback
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/user/manageentity">
+                {/* <NavLink className="nav-link" to="/user/manageentity">
                   Manage Entities
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/user/addentity">
@@ -69,9 +70,9 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/user/addentitydata">
+                {/* <NavLink className="nav-link" to="/user/addentitydata">
                   Add Entity Data
-                </NavLink>
+                </NavLink> */}
               </li>
             </ul>
             {/* Left links */}
@@ -85,7 +86,7 @@ const Navbar = () => {
               data-mdb-toggle="dropdown"
               aria-expanded="false"
             >
-              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" className="rounded-circle" height={25} alt="Black and White Portrait of a Man" loading="lazy" />
+              <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" className="rounded-circle" height={50} alt="Black and White Portrait of a Man" loading="lazy" />
             </a>
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
               <li>
