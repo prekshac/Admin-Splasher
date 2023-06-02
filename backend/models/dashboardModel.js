@@ -2,10 +2,13 @@ const {Schema, model, Types}= require('../connection');
 
 const myschema=new Schema({
     user: {type: Types.ObjectId, ref:'users'},
-    entities: [{type: Types.ObjectId, ref:'entity'}],  
-    tables: [{type: Types.ObjectId, ref:'table'}],  
-    data: Object,
-    createdAt: Date,
+    apiKey: String,  
+    authDomain: String,  
+    projectId: String,
+    storageBucket: String,
+    messagingSenderId: String,
+    appId: String,
+    appName: String,
     updatedAt: Date
 });
 

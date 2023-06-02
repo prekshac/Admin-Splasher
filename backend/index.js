@@ -3,6 +3,7 @@ const app=express();
 const port=5000;
 const userRouter = require('./routers/userRouter');
 const entityRouter = require('./routers/entityRouter');
+const dashboardRouter = require('./routers/dashboardRouter');
 const cors = require('cors');
 
 app.use(cors({
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 app.use('/entity', entityRouter);
+app.use('/dashboard', dashboardRouter);
 
 
 app.get('/', (req, res)=>{

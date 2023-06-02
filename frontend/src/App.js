@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Home from './components/Home';
 import Login from './components/main/Login';
@@ -13,7 +13,6 @@ import ManageEntity from './components/user/ManageEntities';
 import AddEntity from './components/user/AddEntity';
 import AddEntityData from './components/user/AddEntityData';
 import UserProvider from './context/UserProvider';
-import UserProfile from './components/user/UserProfile';
 import UserAuth from './auth/UserAuth';
 import Example from './components/user/Sidebar';
 import Profile from './components/user/Profile';
@@ -40,7 +39,6 @@ function App() {
                 </UserAuth>
               }
             >
-              <Route path="userprofile" element={<UserProfile />} />
               <Route path="configure" element={<ConfigureDashboard />} />
               <Route path="manageentity" element={<ManageEntity />} />
               <Route path="addentity" element={<AddEntity />} />
