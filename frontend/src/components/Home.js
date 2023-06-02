@@ -57,8 +57,7 @@ const Home = () => {
                         role="button"
                         aria-controls="#picker-editor"
                         margin-left="90%"
-                        style={{ color: "hsl(218, 81%, 85%)" }}
-                      >
+                        style={{ color: "hsl(218, 81%, 85%)" }}>
                         Get started
                       
                     </a>
@@ -66,9 +65,7 @@ const Home = () => {
                       className=" btn knowmore  btn-primary btn-lg "
                       href="#about"
                       role="button"
-                      aria-controls="#picker-editor"
-                      
-                    >
+                      aria-controls="#picker-editor">
                       Know More
                       </a>
                

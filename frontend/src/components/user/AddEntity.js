@@ -10,7 +10,7 @@ const AddEntity = () => {
     { value: 'fa fa-user', label: 'User' },
     { value: 'fa-solid fa-shopping-cart', label: 'Order' },
     { value: "fa-solid fa-regular fa-tag", label: 'Offer' },
-    { value: "fa-solid fa-conveyor-belt-arm", label: 'Product' },
+    { value: "fa-solid fa-bag-shopping", label: 'Product' },
   ];
   const [selectedIcon, setselectedIcon] = useState(iconOptions[0].value);
 
@@ -74,7 +74,7 @@ const AddEntity = () => {
                   </div>
                   <div>
                     <button type="submit" className="addentity-btn btn-primary btn-lg">
-                      Submit
+                      Submit 
                     </button>
                   </div>
                 </form>
