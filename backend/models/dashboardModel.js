@@ -12,4 +12,4 @@ const myschema=new Schema({
     updatedAt: Date
 });
 
-module.exports=Model('dashboard', myschema);
+module.exports=model('dashboard', myschema);

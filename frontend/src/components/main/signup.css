@@ -1,30 +1,33 @@
 .card-body-signup {
-  background-color: #ffffffbb;
+  background-color: #fdfdfd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding-left: 68px;
     padding-right: 68px;
     padding-top: 20px;
     padding-bottom: 20px;
+    border: 1px solid rgb(12, 0, 0);
 }
 .mycard-signup{
-    background-color: #ece8e8a3;
+    background-color: #ece8e800;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-left: 20%;
+    margin-left: 290px;
     margin-right: 20%;
+    border: 1px solid rgb(249, 248, 248);
 }
 .btn-signup{
-    background-color: #6e1ce2;
+    background-color: #03205d;
     color: whitesmoke;
     font-weight: bold;
     box-shadow: 30px(0,0,0,0.5);
     align-self: center;
     margin-left: 20%;
+    border: 1px solid black;
 }
 .heading-signup{
     font-size: 40px;
@@ -33,5 +36,12 @@
     
     color: whitesmoke;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: px;
+    padding-left: 99px;
+}
+.sing-main{
+    background-image: url('signmain3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+   padding-bottom: 144px;
 }

@@ -93,7 +93,7 @@ const AddEntityData = () => {
           >
             <form className="entity-form" onSubmit={Formik.handleSubmit}>
               <label htmlFor="selectBox" className='entity-head'>Select an entity option:</label>
-              <select id="selectBox" value={selEntity} onChange={e => setSelEntity(e.target.value)} className='form-control'>
+              <select id="selectBox" value={selEntity} onChange={e => setSelEntity(e.target.value)} className='form-control2'>
                 <option value="">-- Choose --</option>
                 {
                   entityList.map((entity) => (

@@ -65,9 +65,9 @@ const Navbar = () => {
                 </NavLink> */}
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/user/addentity">
+                {/* <NavLink className="nav-link" to="/user/addentity">
                   Add Entities
-                </NavLink>
+                </NavLink> */}
               </li>
               <li className="nav-item">
                 {/* <NavLink className="nav-link" to="/user/addentitydata">

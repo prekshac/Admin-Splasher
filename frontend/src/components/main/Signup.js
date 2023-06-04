@@ -47,13 +47,7 @@ const Signup = () => {
   });
 
   return (
-    <section className="vh-100" style={{
-      backgroundImage:
-        'url("https://i.pinimg.com/564x/a8/da/f6/a8daf67e8570245eb9ef1ebb27fbab1b.jpg")',
-      height: '80vh',
-      backgroundSize: "cover",
-      backgroundPosition: "50% 50%",
-    }}>
+    <section className="sing-main" >
       <div className="container h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-xl-9">
