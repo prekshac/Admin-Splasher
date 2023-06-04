@@ -33,7 +33,8 @@ export default function DashboardAppPage() {
   const [data, setData] = useState([]);
 
   const [userList, setUserList] = useState([]);
-  const [orderList, setOrderList] = useState([]);
+  const [orderList, setOrderList] = useState([])
+  const[feedbackList, setFeedbackList] = useState([]);
 
   const getFirebaseData = () => {
     const q = query(collection(db, 'User'));
@@ -44,7 +45,22 @@ export default function DashboardAppPage() {
           id: doc.id,
           data: doc.data(),
         }))
-      );
+        
+        )
+      setOrderList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+
+      )
+      
+      setFeedbackList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+          }))
+      )
 
       console.log(userList);
     });
@@ -70,21 +86,25 @@ export default function DashboardAppPage() {
             <AppWidgetSummary title="Total Users" total={userList.length} icon={'ant-design:android-filled'} />
           </Grid>
 
-          {/* <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary
               title="Total Orders"
-              total={orders.length}
+              total={orderList.length}
               color="error"
               icon={'ant-design:apple-filled'}
             />
-          </Grid> */}
-          
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Item Orders" total={1723315} color="warning" icon={'ant-design:windows-filled'} />
           </Grid>
+          
+         
 
           <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary title="Bug Reports" total={234} color="error" icon={'ant-design:bug-filled'} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <AppWidgetSummary 
+            title="Feedback" 
+            total={feedbackList.length}
+             color="error" icon={'ant-design:bug-filled'} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>

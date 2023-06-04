@@ -75,11 +75,7 @@ const Navbar = () => {
                     My profile
                   </NavLink>
                 </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Settings
-                  </a>
-                </li>
+                
                 <li>
                   <a className="dropdown-item" href="" role="button" onClick={logout}>
                     Logout
