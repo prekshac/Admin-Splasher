@@ -16,6 +16,7 @@ import UserProvider from './context/UserProvider';
 import UserAuth from './auth/UserAuth';
 import Example from './components/user/Sidebar';
 import Profile from './components/user/Profile';
+import Dashboard from './components/user/Dashboard';
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
               <Route path="addentitydata" element={<AddEntityData />} />
               <Route path="sidebar" element={<Example />} />
               <Route path="profile" element={<Profile />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              
             </Route>
           </Routes>
         </UserProvider>

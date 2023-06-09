@@ -31,6 +31,11 @@ const Sidebar = () => {
           Add Entity Data
         </NavLink>
       </div>
+      <div className="sidebar-item">
+        <NavLink id="dashboard" className="menu-item" to="/user/dashboard">
+          View Dashboard
+        </NavLink>
+      </div>
       
       
     </Menu>

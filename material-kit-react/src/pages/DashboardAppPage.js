@@ -35,6 +35,7 @@ export default function DashboardAppPage() {
   const [userList, setUserList] = useState([]);
   const [orderList, setOrderList] = useState([])
   const[feedbackList, setFeedbackList] = useState([]);
+  const [productList, setProductList] = useState([]);
 
   const getFirebaseData = () => {
     const q = query(collection(db, 'User'));
@@ -47,6 +48,11 @@ export default function DashboardAppPage() {
         }))
         
         )
+        console.log(userList);
+    });
+        const r = query(collection(db, 'Orders'));
+    onSnapshot(r, (querySnapshot) => {
+      console.log(querySnapshot.docs);
       setOrderList(
         querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -54,21 +60,38 @@ export default function DashboardAppPage() {
         }))
 
       )
-      
+      console.log(orderList);
+    });
+
+    const s = query(collection(db, 'feedback'));
+    onSnapshot(s, (querySnapshot) => {
+      console.log(querySnapshot.docs);
       setFeedbackList(
         querySnapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
           }))
       )
+        
+      console.log(feedbackList);
+    });
 
-      console.log(userList);
+    const t = query(collection(db, 'product'));
+    onSnapshot(t, (querySnapshot) => {
+      console.log(querySnapshot.docs);
+      setProductList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+      console.log(productList);
     });
   };
-
   useEffect(() => {
     getFirebaseData();
   }, []);
+
 
   return (
     <>
@@ -98,7 +121,7 @@ export default function DashboardAppPage() {
          
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Bug Reports" total={234} color="error" icon={'ant-design:bug-filled'} />
+            <AppWidgetSummary title="Products" total={productList.length} color="error" icon={'ant-design:bug-filled'} />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary 
@@ -271,5 +294,4 @@ export default function DashboardAppPage() {
         </Grid>
       </Container>
     </>
-  );
-}
+  )};
