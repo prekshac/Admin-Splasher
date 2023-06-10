@@ -50,10 +50,12 @@ const AddEntity = () => {
   return (
     <section>
       <div className="addentity-container" style={{ minHeight: '100vh' }}>
+      
         <div className="add-entity-cardmain">
           <div className="">
-            <h2 className="addentity-heading">Add Entity</h2>
+            
             <div className="card addentity-card" style={{ borderRadius: 15 }}>
+            <h2 className="addentity-heading">Add Entity</h2>
               <div className="addentity-cardbody">
                 <form onSubmit={entityManagerForm.handleSubmit}>
                   <MDBInput label="Name" id="name" type="text" value={entityManagerForm.values.name} onChange={entityManagerForm.handleChange} />

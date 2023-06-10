@@ -85,15 +85,15 @@ const AddEntityData = () => {
 
 
   return (
-    <div style={{ minHeight: '100vh' }}>
-      <div className="card" style={{ marginTop: '10vh', marginLeft: '30%', marginRight: '30%', minHeight: '50vh' }}>
+    <div className="card-body1" style={{ minHeight: '100vh' }}>
+      <div className="crsd1" >
         <div className="card-content">
           <h4 >Add Entity: </h4>
           <Formik
           >
             <form className="entity-form" onSubmit={Formik.handleSubmit}>
               <label htmlFor="selectBox" className='entity-head'>Select an entity option:</label>
-              <select id="selectBox" value={selEntity} onChange={e => setSelEntity(e.target.value)} className='form-control'>
+              <select id="selectBox" value={selEntity} onChange={e => setSelEntity(e.target.value)} className='form-control2'>
                 <option value="">-- Choose --</option>
                 {
                   entityList.map((entity) => (

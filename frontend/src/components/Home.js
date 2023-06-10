@@ -20,14 +20,14 @@ const Home = () => {
             {" "}
             {/* Background image */}
             <div
-              className="p-5 text-center bg-image"
+              className="home-main p-5 text-center bg-image"
               style={{
-                backgroundImage:
-                  'url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/b70523147778479.62c8776952d0b.png")',
-                height: '80vh',
-                backgroundSize: "cover",
-                backgroundPosition: "50% 50%",
-                backgroundColor: "rgba(0, 0, 0, 0)"
+                // backgroundImage:
+                //   'url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/b70523147778479.62c8776952d0b.png")',
+                // height: '80vh',
+                // backgroundSize: "cover",
+                // backgroundPosition: "50% 50%",
+                // backgroundColor: "rgba(0, 0, 0, 0)"
               }}
               aria-controls="#picker-editor"
             >
