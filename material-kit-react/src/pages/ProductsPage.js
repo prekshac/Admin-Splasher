@@ -1,11 +1,29 @@
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // @mui
-import { Container, Stack, Typography } from '@mui/material';
+import { Card,
+  Table,
+  Stack,
+  Paper,
+  Avatar,
+  Button,
+  Popover,
+  Checkbox,
+  TableRow,
+  MenuItem,
+  TableBody,
+  TableCell,
+  Container,
+  Typography,
+  IconButton,
+  TableContainer,
+  TablePagination, } from '@mui/material';
 // components
+import { collection, onSnapshot, query } from 'firebase/firestore';
 import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } from '../sections/@dashboard/products';
 // mock
 import PRODUCTS from '../_mock/products';
+import db from '../firebaseConfig';
 
 // ----------------------------------------------------------------------
 
@@ -19,6 +37,24 @@ export default function ProductsPage() {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
+  const [productList, setProductList] = useState([]);
+  const getFirebaseData = () => {
+    const q = query(collection(db, 'products'));
+    onSnapshot(q, (querySnapshot) => {
+      console.log(querySnapshot.docs);
+      setProductList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+        
+        )
+        console.log(productList);
+    })};
+    useEffect(() => {
+      getFirebaseData();
+    }, []);
+  
 
   return (
     <>
@@ -42,6 +78,7 @@ export default function ProductsPage() {
           </Stack>
         </Stack>
 
+        {/* <ProductList products={} />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         */}
         <ProductList products={PRODUCTS} />
         <ProductCartWidget />
       </Container>

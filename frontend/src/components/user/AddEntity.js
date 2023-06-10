@@ -9,8 +9,8 @@ const AddEntity = () => {
   const iconOptions = [
     { value: 'fa fa-user', label: 'User' },
     { value: 'fa-solid fa-shopping-cart', label: 'Order' },
-    { value: "fa-solid fa-regular fa-tag", label: 'Offer' },
-    { value: "fa-solid fa-bag-shopping", label: 'Product' },
+    { value: 'fa-solid fa-regular fa-tag', label: 'Offer' },
+    { value: 'fa-solid fa-bag-shopping', label: 'Product' }
   ];
   const [selectedIcon, setselectedIcon] = useState(iconOptions[0].value);
 
@@ -60,8 +60,7 @@ const AddEntity = () => {
                 <form onSubmit={entityManagerForm.handleSubmit}>
                   <MDBInput label="Name" id="name" type="text" value={entityManagerForm.values.name} onChange={entityManagerForm.handleChange} />
                   <MDBInput label="CollectionName" id="collectionName" type="text" value={entityManagerForm.values.collectionName} onChange={entityManagerForm.handleChange} />
-                  <MDBInput label="Real-time" id="realtime" type="text" value={entityManagerForm.values.realtime} onChange={entityManagerForm.handleChange} />
-
+                  <input id="realtime" type="radio" value={entityManagerForm.values.realtime} onChange={entityManagerForm.handleChange} /> Real Time
                   <div className="d-flex">
                     <select className="form-control" onChange={(e) => setselectedIcon(e.target.value)} value={selectedIcon}>
                       {iconOptions.map((iconOption, index) => (
@@ -72,11 +71,11 @@ const AddEntity = () => {
                     </select>
                     <div className="p-3">
                       <i className={selectedIcon}></i>
-                      </div>
+                    </div>
                   </div>
                   <div>
                     <button type="submit" className="addentity-btn btn-primary btn-lg">
-                      Submit 
+                      Submit
                     </button>
                   </div>
                 </form>

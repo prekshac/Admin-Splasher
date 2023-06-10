@@ -64,11 +64,11 @@ const Navbar = () => {
                   Manage Entities
                 </NavLink> */}
               </li>
-              <li className="nav-item">
-                {/* <NavLink className="nav-link" to="/user/addentity">
+              {/* <li className="nav-item">
+                <NavLink className="nav-link" to="/user/addentity">
                   Add Entities
-                </NavLink> */}
-              </li>
+                </NavLink>
+              </li> */}
               <li className="nav-item">
                 {/* <NavLink className="nav-link" to="/user/addentitydata">
                   Add Entity Data

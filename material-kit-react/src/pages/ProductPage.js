@@ -218,23 +218,8 @@ export default function UserPage() {
                             </Typography>
                           </Stack>
                         </TableCell>
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            <Typography variant="subtitle2" noWrap>
-                              {data.role}
-                            </Typography>
-                          </Stack>
-                        </TableCell>
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            
-                            <Typography variant="subtitle2" noWrap>
-                              {data.verified}
-                        <TableCell align="left">{data.email}</TableCell>
-                            </Typography>
-                          </Stack>
-                        </TableCell>
 
+                        <TableCell align="left">{data.email}</TableCell>
 
                         <TableCell align="left">{data.role}</TableCell>
                         <TableCell align="left">{data.verified}</TableCell>

@@ -33,7 +33,9 @@ export default function DashboardAppPage() {
   const [data, setData] = useState([]);
 
   const [userList, setUserList] = useState([]);
-  const [orderList, setOrderList] = useState([]);
+  const [orderList, setOrderList] = useState([])
+  const[feedbackList, setFeedbackList] = useState([]);
+  const [productList, setProductList] = useState([]);
 
   const getFirebaseData = () => {
     const q = query(collection(db, 'User'));
@@ -44,15 +46,52 @@ export default function DashboardAppPage() {
           id: doc.id,
           data: doc.data(),
         }))
-      );
+        
+        )
+        console.log(userList);
+    });
+        const r = query(collection(db, 'Orders'));
+    onSnapshot(r, (querySnapshot) => {
+      console.log(querySnapshot.docs);
+      setOrderList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
 
-      console.log(userList);
+      )
+      console.log(orderList);
+    });
+
+    const s = query(collection(db, 'feedback'));
+    onSnapshot(s, (querySnapshot) => {
+      console.log(querySnapshot.docs);
+      setFeedbackList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+          }))
+      )
+        
+      console.log(feedbackList);
+    });
+
+    const t = query(collection(db, 'product'));
+    onSnapshot(t, (querySnapshot) => {
+      console.log(querySnapshot.docs);
+      setProductList(
+        querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      )
+      console.log(productList);
     });
   };
-
   useEffect(() => {
     getFirebaseData();
   }, []);
+
 
   return (
     <>
@@ -70,21 +109,25 @@ export default function DashboardAppPage() {
             <AppWidgetSummary title="Total Users" total={userList.length} icon={'ant-design:android-filled'} />
           </Grid>
 
-          {/* <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary
               title="Total Orders"
-              total={orders.length}
+              total={orderList.length}
               color="error"
               icon={'ant-design:apple-filled'}
             />
-          </Grid> */}
-          
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Item Orders" total={1723315} color="warning" icon={'ant-design:windows-filled'} />
           </Grid>
+          
+         
 
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Bug Reports" total={234} color="error" icon={'ant-design:bug-filled'} />
+            <AppWidgetSummary title="Products" total={productList.length} color="error" icon={'ant-design:bug-filled'} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
+            <AppWidgetSummary 
+            title="Feedback" 
+            total={feedbackList.length}
+             color="error" icon={'ant-design:bug-filled'} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>
@@ -251,5 +294,4 @@ export default function DashboardAppPage() {
         </Grid>
       </Container>
     </>
-  );
-}
+  )};
