@@ -36,6 +36,11 @@ const Sidebar = () => {
           View Dashboard
         </NavLink>
       </div>
+      <div className="sidebar-item">
+        <a id="dashboard" className="menu-item" href="http://localhost:3001/dashboard/app">
+          View Mobile Dashboard
+        </a>
+      </div>
       
       
     </Menu>
