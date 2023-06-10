@@ -20,7 +20,7 @@ const AddEntity = () => {
       user: currentUser._id,
       collectionName: '',
       keyValuePairs: '',
-      realtime: '',
+      realtime: false,
       icon: '',
       createdAt: new Date()
     },
