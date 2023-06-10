@@ -40,9 +40,9 @@ import useAppContext from '../context/AppContext';
 
 const TABLE_HEAD = [
   { id: 'name', label: 'Name', alignRight: false },
-  { id: 'email', label: 'Email', alignRight: false },
+  { id: 'company', label: 'Company', alignRight: false },
   { id: 'role', label: 'Role', alignRight: false },
-  { id: 'verified', label: 'Verified', alignRight: false },
+  { id: 'isVerified', label: 'Verified', alignRight: false },
   { id: 'status', label: 'Status', alignRight: false },
   { id: '' },
 ];
@@ -170,158 +170,141 @@ export default function UserPage() {
 
   return (
     <>
-      <Helmet>
-        <title> User | Minimal UI </title>
-      </Helmet>
+    <Helmet>
+      <title> User | Minimal UI </title>
+    </Helmet>
 
-      <Container>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
-          <Typography variant="h4" gutterBottom>
-            User
-          </Typography>
-          <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
-            New User
-          </Button>
-        </Stack>
+    <Container>
+      <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
+        <Typography variant="h4" gutterBottom>
+          User
+        </Typography>
+        <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
+          New User
+        </Button>
+      </Stack>
 
-        <Card>
-          <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
+      <Card>
+        <UserListToolbar numSelected={selected.length} filterName={filterName} onFilterName={handleFilterByName} />
 
-          <Scrollbar>
-            <TableContainer sx={{ minWidth: 800 }}>
-              <Table>
-                <UserListHead
-                  order={order}
-                  orderBy={orderBy}
-                  headLabel={TABLE_HEAD}
-                  rowCount={USERLIST.length}
-                  numSelected={selected.length}
-                  onRequestSort={handleRequestSort}
-                  onSelectAllClick={handleSelectAllClick}
-                />
-                <TableBody>
-                  {userList.map((user) => {
-                    const { id, data } = user;
-                    const selectedUser = selected.indexOf(data.name) !== -1;
+        <Scrollbar>
+          <TableContainer sx={{ minWidth: 800 }}>
+            <Table>
+              <UserListHead
+                order={order}
+                orderBy={orderBy}
+                headLabel={TABLE_HEAD}
+                rowCount={USERLIST.length}
+                numSelected={selected.length}
+                onRequestSort={handleRequestSort}
+                onSelectAllClick={handleSelectAllClick}
+              />
+              <TableBody>
+                {userList.map((user) => {
+                  const { id, data } = user;
+                  const selectedUser = selected.indexOf(data.name) !== -1;
 
-                    return (
-                      <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
-                        <TableCell padding="checkbox">
-                          <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, data.name)} />
-                        </TableCell>
+                  return (
+                    <TableRow hover key={id} tabIndex={-1} role="checkbox" selected={selectedUser}>
+                      <TableCell padding="checkbox">
+                        <Checkbox checked={selectedUser} onChange={(event) => handleClick(event, data.name)} />
+                      </TableCell>
 
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            <Avatar alt={data.name} src='https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745'  />
-                            <Typography variant="subtitle2" noWrap>
-                              {data.name}
-                            </Typography>
-                          </Stack>
-                        </TableCell>
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            <Typography variant="subtitle2" noWrap>
-                              {data.role}
-                            </Typography>
-                          </Stack>
-                        </TableCell>
-                        <TableCell component="th" scope="row" padding="none">
-                          <Stack direction="row" alignItems="center" spacing={2}>
-                            
-                            <Typography variant="subtitle2" noWrap>
-                              {data.verified}
-                        <TableCell align="left">{data.email}</TableCell>
-                            </Typography>
-                          </Stack>
-                        </TableCell>
-
-
-                        <TableCell align="left">{data.role}</TableCell>
-                        <TableCell align="left">{data.verified}</TableCell>
-                        <TableCell align="left">{data.status}</TableCell>
-
-                        <TableCell align="right">
-                          <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
-                            <i className="fas fa-trash"/> 
-                          </IconButton>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                  {emptyRows > 0 && (
-                    <TableRow style={{ height: 53 * emptyRows }}>
-                      <TableCell colSpan={6} />
-                    </TableRow>
-                  )}
-                </TableBody>
-
-                {isNotFound && (
-                  <TableBody>
-                    <TableRow>
-                      <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
-                        <Paper
-                          sx={{
-                            textAlign: 'center',
-                          }}
-                        >
-                          <Typography variant="h6" paragraph>
-                            Not found
+                      <TableCell component="th" scope="row" padding="none">
+                        <Stack direction="row" alignItems="center" spacing={2}>
+                          <Avatar alt={data.name} src='https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745'  />
+                          <Typography variant="subtitle2" noWrap>
+                            {data.name}
                           </Typography>
+                        </Stack>
+                      </TableCell>
+                      <TableCell align="left">{data.email}</TableCell>
+                      <TableCell align="left">{data.role}</TableCell>
+                      <TableCell align="left">{data.verified}</TableCell>
+                      <TableCell align="left">{data.status}</TableCell>
 
-                          <Typography variant="body2">
-                            No results found for &nbsp;
-                            <strong>&quot;{filterName}&quot;</strong>.
-                            <br /> Try checking for typos or using complete words.
-                          </Typography>
-                        </Paper>
+                      <TableCell align="right">
+                        <IconButton size="large" color="inherit" onClick={handleOpenMenu}>
+                          <i className="fas fa-trash"/> 
+                        </IconButton>
                       </TableCell>
                     </TableRow>
-                  </TableBody>
+                  );
+                })}
+                {emptyRows > 0 && (
+                  <TableRow style={{ height: 53 * emptyRows }}>
+                    <TableCell colSpan={6} />
+                  </TableRow>
                 )}
-              </Table>
-            </TableContainer>
-          </Scrollbar>
+              </TableBody>
 
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={USERLIST.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Card>
-      </Container>
+              {isNotFound && (
+                <TableBody>
+                  <TableRow>
+                    <TableCell align="center" colSpan={6} sx={{ py: 3 }}>
+                      <Paper
+                        sx={{
+                          textAlign: 'center',
+                        }}
+                      >
+                        <Typography variant="h6" paragraph>
+                          Not found
+                        </Typography>
 
-      <Popover
-        open={Boolean(open)}
-        anchorEl={open}
-        onClose={handleCloseMenu}
-        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        PaperProps={{
-          sx: {
-            p: 1,
-            width: 140,
-            '& .MuiMenuItem-root': {
-              px: 1,
-              typography: 'body2',
-              borderRadius: 0.75,
-            },
+                        <Typography variant="body2">
+                          No results found 
+                          <strong>"{filterName}"</strong>.
+                          <br /> Try checking for typos or using complete words.
+                        </Typography>
+                      </Paper>
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              )}
+            </Table>
+          </TableContainer>
+        </Scrollbar>
+
+        <TablePagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={USERLIST.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </Card>
+    </Container>
+
+    <Popover
+      open={Boolean(open)}
+      anchorEl={open}
+      onClose={handleCloseMenu}
+      anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      PaperProps={{
+        sx: {
+          p: 1,
+          width: 140,
+          '& .MuiMenuItem-root': {
+            px: 1,
+            typography: 'body2',
+            borderRadius: 0.75,
           },
-        }}
-      >
-        <MenuItem>
-          <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
-          Edit
-        </MenuItem>
+        },
+      }}
+    >
+      <MenuItem>
+        <Iconify icon={'eva:edit-fill'} sx={{ mr: 2 }} />
+        Edit
+      </MenuItem>
 
-        <MenuItem sx={{ color: 'error.main' }}>
-          <Iconify icon={'eva:trash-2-outline'} sx={{ mr: 2 }} />
-          Delete
-        </MenuItem>
-      </Popover>
-    </>
+      <MenuItem sx={{ color: 'error.main' }}>
+        <Iconify icon={'eva:trash-2-outline'} sx={{ mr: 2 }} />
+        Delete
+      </MenuItem>
+    </Popover>
+  </>
   );
 }
