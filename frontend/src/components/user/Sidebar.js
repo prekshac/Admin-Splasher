@@ -37,6 +37,11 @@ const Sidebar = () => {
           View Mobile dashboard
         </a>
       </div>
+      <div className="sidebar-item">
+        <NavLink id="profile" className="menu-item" to="/main/Price">
+          Price
+        </NavLink>
+      </div>
       
       
     </Menu>

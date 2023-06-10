@@ -17,6 +17,7 @@ import UserAuth from './auth/UserAuth';
 import Example from './components/user/Sidebar';
 import Profile from './components/user/Profile';
 import Dashboard from './components/user/Dashboard';
+import Price from './components/user/Price';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path="signup" element={<Signup />} />
               <Route path="authenticate" element={<Authenticate />} />
               <Route path="feedback" element={<Feedback />} />
+              <Route path="price" element={<Price />} />
             </Route>
             <Route
               path="user"
