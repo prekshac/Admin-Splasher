@@ -31,11 +31,7 @@ const Sidebar = () => {
           Add Entity Data
         </NavLink>
       </div>
-      <div className="sidebar-item">
-        <NavLink id="dashboard" className="menu-item" to="/user/dashboard">
-          View Dashboard
-        </NavLink>
-      </div>
+      
       <div className="sidebar-item">
         <a id="dashboard" className="menu-item" href="http://localhost:3001/dashboard/app">
           View Mobile Dashboard

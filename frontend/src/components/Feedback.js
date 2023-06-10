@@ -1,6 +1,6 @@
 import React from 'react'
 import Rating from 'react-rating'
-import './Feedback.css';
+
 
 const Feedback = () => {
   return (
