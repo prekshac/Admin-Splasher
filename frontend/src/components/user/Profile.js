@@ -68,11 +68,7 @@ const Profile = () => {
             <Field type="password" id="password" name="password" />
             <ErrorMessage name="password" component="div" className="error-message" />
           </div>
-          <div className="profile-form-group">
-            <label htmlFor="avatar"className='fw-bold' style={{display:'block'}}>Avatar</label>
-            <Field type="text" id="avatar" name="avatar" />
-            <ErrorMessage name="avatar" component="div" className="error-message" />
-            </div>
+          
 
           <button type="submit" className='profile-btn'>Save</button>
         </Form>
