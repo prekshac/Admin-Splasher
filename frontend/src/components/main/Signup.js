@@ -55,13 +55,13 @@ const Signup = () => {
             <div className="mycard-signup" style={{ borderRadius: 15 }}>
               <div className="card-body-signup">
                 <form onSubmit={signupForm.handleSubmit}>
-                <MDBInput label='Full Name' id='name' type='text'  />
+                <MDBInput label='Full Name' id='name' type='text' onChange={signupForm.handleChange} value={signupForm.values.name} />
 
-                  <MDBInput label='Email' id='email' type='email'  /> 
+                  <MDBInput label='Email' id='email' type='email' onChange={signupForm.handleChange} value={signupForm.values.email}  /> 
 
-                  <MDBInput label='Password' id='password' type='password'  />
+                  <MDBInput label='Password' id='password' type='password' onChange={signupForm.handleChange} value={signupForm.values.password}  />
 
-                  <MDBInput label='Confirm Password' id='cPassword' type='password'  />
+                  <MDBInput label='Confirm Password' id='cPassword' type='password' onChange={signupForm.handleChange} value={signupForm.values.cPassword}  />
 
                   <hr className="mx-n3" />
                   <div className="px-6 py-2">
