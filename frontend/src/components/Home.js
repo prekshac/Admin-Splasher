@@ -6,7 +6,7 @@ const Home = () => {
   
   return (
 
-    <div>
+    <div className="bdcolor">
 
       <div data-draggable="true" style={{ position: "relative" }}>
         {/**/}
@@ -40,7 +40,7 @@ const Home = () => {
                   backdropFilter: "blur(-500px)"
                 }}
               >
-                <div className="card-body px-4 py-5 px-md-5">
+                <div className="card-body90 px-4 py-5 px-md-5">
                   <h6 className=" card-content fw-bold ls-tight ">
                     {" "}
                     <span className='heading1'>Welcome to Admin Splasher, </span> <br />{" "}
@@ -58,7 +58,7 @@ const Home = () => {
                         aria-controls="#picker-editor"
                         margin-left="90%"
                         style={{ color: "hsl(218, 81%, 85%)" }}>
-                        Get started
+                        SignUp
                       
                     </a>
               <a

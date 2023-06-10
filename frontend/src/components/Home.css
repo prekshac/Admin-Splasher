@@ -16,7 +16,7 @@
 .about-info{
     font-size: large;
     font-weight: bold;
-    color: #272727;
+    color: #ffffff;
     padding-left: 80px;
     padding-right: 90px;
     padding-top: 30px;
@@ -24,23 +24,26 @@
 .heading2{
     font-size: 40px;
     font-weight: bolder;
-    color: #272727;
+    color: #ffffff;
     padding-left:43%;
     text-size-adjust: 100px;
 }
 #about {
     margin-top: 30px;
     margin-bottom: 30px;
-    background-color: #cec7bd66;
+    background-color: #ffffff00;
     padding: 30px;
+    border: 5px solid white;
+    margin-left:50px;
+    margin-right:50px;
 }
 .heading3{
     font-size: 40px;
     font-weight: bolder;
-    color: #272727;
+    color: #fffdfd;
     padding-left:45%;
     padding-right: 40%;
-    padding-top: 50px;
+    padding-top: -9px;
     margin-top: 50px;
     
 }
@@ -49,30 +52,36 @@
     margin-bottom: 30px;
     font-size: medium;
     font-weight: bold;
-    color: #272727;
+    color: #fffdfd;
     padding-left: 80px;
     padding-right: 90px;
 }
 .mybtn{
     margin-top: 40px;
     margin-left: 30%;
-    background-color: rgb(106, 37, 202);
+    background-color: rgba(106, 37, 202, 0);
     color: whitesmoke ;
     font-weight: bold;
     box-shadow: 30px(0,0,0,0.5);
     margin-bottom: 30px;
+    border: 1px solid white;
 }
 .knowmore{
     margin-right: 30%;
     margin-top: 0px;
     margin-left: 80px;
-    background-color: #dddbd644;
+    background-color: #00000000;
+    border: 1px solid white;
+    margin-bottom:28px ;
 }
 #features{
     margin-top: 30px;
-    margin-bottom: 30px;
-    background-color: #cec7bd66;
-    padding-bottom: 30px;
+    margin-bottom: 20px;
+    background-color: #fdfdfd00;
+    padding-bottom: -9px;
+    border: 5px solid white;
+    margin-left:50px;
+    margin-right:50px;
 }
 .lists{
     
@@ -85,7 +94,7 @@
     
 }
 .lists:hover {
-    background-color:  #682bb2b6;
+    background-color:  #44bdf6;
     ; /* Change to the desired hover background color */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Change to the desired shadow effect */
     color: whitesmoke;
@@ -95,3 +104,21 @@
     background-image: 'url("https://mir-s3-cdn-cf.behance.net/project_modules/fs/b70523147778479.62c8776952d0b.png")';
                 
   }
+  .bdcolor{
+    background-color: rgb(0, 0, 0);
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2015/07/14/background-color-black.jpg");
+    background-repeat: no-repeat;
+    background-size: 1450px;
+    ;
+  }
+  .card-body90{
+    background-color: #000000;
+    border: 4px solid rgb(255, 255, 255);
+    
+
+  }
+  .heading1{
+    color: #ffffff;
+    
+  }
+  

@@ -2,8 +2,9 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background: #dcdcdc;
+    background: #dcdcdc00;
     border-radius: 5px;
+    border: #fff solid 2px;
   }
   
   .form-group {
@@ -43,7 +44,16 @@
       font-weight: bold;
       font-size: 30px;
       margin-bottom: 20px;
-      color: black;
+      color: rgb(255, 255, 255);
+      padding-top:40px;
       
+  }
+  .pro123{
+    background-image: url('user4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .profile-form-group{
+    color: white;
   }
   

@@ -41,7 +41,7 @@ const Profile = () => {
   };
 
   return (
-    <div style={{minHeight: '100vh'}}>
+    <div className='pro123' style={{minHeight: '100vh'}}>
     <h2 className="profile-heading">Profile Page</h2>
     <div className="profile-page">
         

@@ -1,9 +1,10 @@
 import React from 'react'
 import Rating from 'react-rating'
+import './Feedback.css';
 
 const Feedback = () => {
   return (
-    <div style={{ minHeight: '100vh' }}><section style={{ backgroundColor: "#ffffff" }} >
+    <div className= "feed123" style={{ minHeight: '100vh' }}><section style={{ backgroundColor: "#ffffff" }} >
     <div className="container my-5 py-5 text-dark" >
       <div className="row d-flex justify-content-center" >
         <div className="col-md-12 ">
