@@ -2,6 +2,7 @@ import { useState } from 'react';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 // mocks_
 import account from '../../../_mock/account';
 
@@ -25,6 +26,12 @@ const MENU_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
+
+  const url = 'http://localhost:5000';
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState(null);
 
   const handleOpen = (event) => {
@@ -33,6 +40,13 @@ export default function AccountPopover() {
 
   const handleClose = () => {
     setOpen(null);
+  };
+  
+  const logout = () => {
+    sessionStorage.removeItem('user');
+    setCurrentUser(null);
+    // navigate('/login', { replace: true });
+    window.location.href = '/login';
   };
 
   return (
@@ -54,7 +68,7 @@ export default function AccountPopover() {
           }),
         }}
       >
-        <Avatar src={account.photoURL} alt="photoURL" />
+        <Avatar src={`${url}+'/'+${currentUser.avatar}`} alt="photoURL" />
       </IconButton>
 
       <Popover
@@ -78,10 +92,10 @@ export default function AccountPopover() {
       >
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle2" noWrap>
-            {account.displayName}
+            {currentUser.name}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {account.email}
+            {currentUser.email}
           </Typography>
         </Box>
 
@@ -97,7 +111,7 @@ export default function AccountPopover() {
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <MenuItem onClick={handleClose} sx={{ m: 1 }}>
+        <MenuItem onClick={logout} sx={{ m: 1 }}>
           Logout
         </MenuItem>
       </Popover>
