@@ -58,7 +58,7 @@ const Home = () => {
                         aria-controls="#picker-editor"
                         margin-left="90%"
                         style={{ color: "hsl(218, 81%, 85%)" }}>
-                        SignUp
+                        SignUp/Login
                       
                     </a>
               <a
