@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import './profile.css';
 
 const Profile = () => {
-  const initialValues = {
-    name: '',
-    email: '',
-    password: '',
-    avatar: '',
-  };
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
-  const handleSubmit = (values) => {
+  const handleSubmit = async (values) => {
     // Handle form submission
     console.log(values);
+    const response = await fetch('http://localhost:5000/user/update/' + currentUser._id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(values)
+    });
+    const data = await response.json();
+    console.log(data);
+    setCurrentUser(data);
+    sessionStorage.setItem('user', JSON.stringify(data));
+    alert('Profile updated successfully');
   };
 
   const validateForm = (values) => {
@@ -41,39 +48,43 @@ const Profile = () => {
   };
 
   return (
-    <div className='pro123' style={{minHeight: '100vh'}}>
-    <h2 className="profile-heading">Profile Page</h2>
-    <div className="profile-page">
-        
-      <Formik
-        initialValues={initialValues}
-        validate={validateForm}
-        onSubmit={handleSubmit}
-      >
-        <Form>
-          <div className="profile-form-group">
-            <label htmlFor="pname" className='fw-bold' style={{display:'block'}}>Name</label>
-            <Field type="text" id="pname" name="pname" />
-            <ErrorMessage name="pname" component="div" className="error-message" />
-          </div>
+    <div className="pro123" style={{ minHeight: '100vh' }}>
+      <h2 className="profile-heading">Profile Page</h2>
+      <div className="profile-page">
+        <Formik initialValues={currentUser} onSubmit={handleSubmit}>
+          {({ values, handleChange, handleSubmit, touched, setFieldValue }) => (
+            <form onSubmit={handleSubmit}>
+              <div className="profile-form-group">
+                <label htmlFor="pname" className="fw-bold" style={{ display: 'block' }}>
+                  Name
+                </label>
+                <Field type="text" id="name" name="name" onChange={handleChange} value={values.name} />
+                <ErrorMessage name="name" component="div" className="error-message" />
+              </div>
 
-          <div className="profile-form-group">
-            <label htmlFor="email"className='fw-bold' style={{display:'block'}}>Email</label>
-            <Field type="email" id="email" name="email" />
-            <ErrorMessage name="email" component="div" className="error-message" />
-          </div>
+              <div className="profile-form-group">
+                <label htmlFor="email" className="fw-bold" style={{ display: 'block' }}>
+                  Email
+                </label>
+                <Field type="email" id="email" name="email" onChange={handleChange} value={values.email} />
+                <ErrorMessage name="email" component="div" className="error-message" />
+              </div>
 
-          <div className="profile-form-group">
-            <label htmlFor="password"className='fw-bold' style={{display:'block'}}>Password</label>
-            <Field type="password" id="password" name="password" />
-            <ErrorMessage name="password" component="div" className="error-message" />
-          </div>
-          
+              <div className="profile-form-group">
+                <label htmlFor="password" className="fw-bold" style={{ display: 'block' }}>
+                  Password
+                </label>
+                <Field type="password" id="password" name="password" onChange={handleChange} value={values.password} />
+                <ErrorMessage name="password" component="div" className="error-message" />
+              </div>
 
-          <button type="submit" className='profile-btn'>Save</button>
-        </Form>
-      </Formik>
-    </div>
+              <button type="submit" className="profile-btn">
+                Save
+              </button>
+            </form>
+          )}
+        </Formik>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,6 @@
+
+
+
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import './AddEntityData.css';
@@ -80,9 +83,8 @@ const AddEntityData = () => {
 
   const entityFormSubmit = (formdata) => {
     console.log(formdata);
+    addFirebaseData(formdata);
   }
-
-
 
   return (
     <div className="card-body1" style={{ minHeight: '100vh' }}>
@@ -103,7 +105,6 @@ const AddEntityData = () => {
               </select>
 
               <button type="submit">Submit</button>
-
 
             </form>
           </Formik>
@@ -128,7 +129,6 @@ const AddEntityData = () => {
                         )
                         )
                       }
-
 
                       <button type="submit" >Add</button>
                     </form>
