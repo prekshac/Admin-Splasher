@@ -15,8 +15,8 @@ import {
   query
 } from "firebase/firestore";
 import { Button, Card, IconButton, Paragraph, Title } from "react-native-paper";
-import ViewDish from "./ViewDish";
-import CurrentOrder from "./CurrentOrder";
+// import ViewDish from "./ViewDish";
+// import CurrentOrder from "./CurrentOrder";
 
 const ListMenu = ({ app }) => {
   const [menuList, setMenuList] = useState([]);
@@ -24,8 +24,8 @@ const ListMenu = ({ app }) => {
   const [showDetails, setShowDetails] = useState(false);
   const [selMenu, setSelMenu] = useState(null);
 
-  const [currentOrder, setCurrentOrder] = useState([]);
-  const [showCurrentOrder, setShowCurrentOrder] = useState(false);
+  // const [currentOrder, setCurrentOrder] = useState([]);
+  // const [showCurrentOrder, setShowCurrentOrder] = useState(false);
 
   const [selCat, setSelCat] = useState(null);
   const [searchText, setSearchText] = useState("");
@@ -117,7 +117,7 @@ const ListMenu = ({ app }) => {
   
 
   useEffect(() => {
-    fetchData();
+    // fetchData();
   }, []);
 
   const openCard = (menuData) => {
@@ -218,12 +218,12 @@ const ListMenu = ({ app }) => {
         </Button>
       )}
       <View style={styles.body}>
-        <CurrentOrder
+        {/* <CurrentOrder
           visible={showCurrentOrder}
           setVisible={setShowCurrentOrder}
           currentOrder={currentOrder}
           setCurrentOrder={setCurrentOrder}
-        />
+        /> */}
 
         <ScrollView>{showMenu()}</ScrollView>
         {selMenu && (

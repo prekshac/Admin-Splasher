@@ -6,28 +6,37 @@ import FontIcon from 'react-native-vector-icons/FontAwesome';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './screens/Home';
 import ListMenu from './screens/ListMenu';
-import Menu from './screens/Menu';
-import CurrentOrder from './screens/CurrentOrder';
-import { useState } from 'react';
+
+// import Menu from './screens/Menu';
+// import CurrentOrder from './screens/CurrentOrder';
+// import { useState } from 'react';
+
+import firebase from "firebase/app";
 
 
 
 export default function App() {
   
-  const firebaseConfig = {
-    apiKey: "AIzaSyCpjPJCT-bO49GkuQq982fVp3Ju0sm5prM",
-    authDomain: "native-9ba01.firebaseapp.com",
-    projectId: "native-9ba01",
-    storageBucket: "native-9ba01.appspot.com",
-    messagingSenderId: "140174126073",
-    appId: "1:140174126073:web:f79e36a08b365da9572b28",
-    measurementId: "G-6W3KPL713D",
-  };
-  const app = initializeApp(firebaseConfig);
+//   const firebaseConfig = {
+//     apiKey: "AIzaSyCv6upASkXMkRpKkeEgax6AXzBGZ4Ithh4",
+//   authDomain: "adminsplasher.firebaseapp.com",
+//   projectId: "adminsplasher",
+//   storageBucket: "adminsplasher.appspot.com",
+//   messagingSenderId: "501883015624",
+//   appId: "1:501883015624:web:f89f83f252cb789bb3b0fd",
+//   measurementId: "G-QXQX1RY85W"
+//   };
+
+  const app = null;
+//   if (!firebase.apps.length) {
+//     firebase.initializeApp({});
+//  }else {
+//     firebase.app(); // if already initialized, use that one
+//  }
+  
+
   const Tab = createBottomTabNavigator();
 
-  
-  
 
   return (
     <View style={styles.container}>
