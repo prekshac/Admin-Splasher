@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: themeColor}} >
+      <nav className="navbar navbar-expand-lg navbar-dark" >
         {/* Container wrapper */}
         <div className="container">
           {/* Toggle button */}

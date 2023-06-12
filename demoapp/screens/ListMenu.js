@@ -64,7 +64,7 @@ const ListMenu = ({ app }) => {
         id: doc.id,
         obj: doc.data(),
       }));
-      // console.log(data);
+      console.log(data);
       setMenuList(data);
       setLoading(false);
       // setTimeout(() => {
@@ -114,10 +114,8 @@ const ListMenu = ({ app }) => {
     });
   };
 
-  
-
   useEffect(() => {
-    // fetchData();
+    fetchData();
   }, []);
 
   const openCard = (menuData) => {
@@ -172,7 +170,6 @@ const ListMenu = ({ app }) => {
     if (loading) {
       return <ActivityIndicator size="large" color="#00ff00" animating />;
     }
-
     return menuList.map((item) => menuCard(item));
   };
 
@@ -259,7 +256,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     borderRadius: 50,
     marginBottom: 20,
-    borderBottom: "none",
+    // borderBottom: "none",
   },
   price: {
     fontSize: 25,

@@ -46,7 +46,7 @@ export default function AccountPopover() {
     sessionStorage.removeItem('user');
     setCurrentUser(null);
     // navigate('/login', { replace: true });
-    window.location.href = '/login';
+    window.location.href = 'http://localhost:3000/main/login';
   };
 
   return (
