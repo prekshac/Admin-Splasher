@@ -17,6 +17,7 @@ app.use('/entity', entityRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/util', utilRouter);
 
+app.use(express.static('./static/uploads'));
 
 app.get('/', (req, res)=>{
     res.send('Working perfectly');
