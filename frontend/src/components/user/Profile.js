@@ -5,6 +5,8 @@ import './profile.css';
 const Profile = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
+  const url = 'http://localhost:5000';
+
   const handleSubmit = async (values) => {
     // Handle form submission
     console.log(values);
@@ -47,6 +49,38 @@ const Profile = () => {
     return errors;
   };
 
+  const updateProfile = async (data) => {
+    console.log(data);
+    const res = await fetch(url + '/user/update/' + currentUser._id, {
+      method: 'PUT',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    console.log(res.status);
+    const userdata = (await res.json());
+    console.log(userdata);
+    setCurrentUser(userdata);
+    sessionStorage.setItem('user', JSON.stringify(userdata));
+  };
+
+  const uploadProfileImage = (e) => {
+    const file = e.target.files[0];
+    // setSelImage(file.name);
+    const fd = new FormData();
+    fd.append('myfile', file);
+    fetch(url + '/util/uploadfile', {
+      method: 'POST',
+      body: fd
+    }).then((res) => {
+      if (res.status === 200) {
+        console.log('file uploaded');
+        updateProfile({ avatar: file.name });
+      }
+    });
+  };
+
   return (
     <div className="pro123" style={{ minHeight: '100vh' }}>
       <h2 className="profile-heading">Profile Page</h2>
@@ -77,6 +111,9 @@ const Profile = () => {
                 <Field type="password" id="password" name="password" onChange={handleChange} value={values.password} />
                 <ErrorMessage name="password" component="div" className="error-message" />
               </div>
+
+              <label className="fw-bold" style={{ display: 'block', color: '#fff' }}>Upload Avatar Image</label>
+              <input className='form-control' style={{color: '#fff'}} type='file' onChange={uploadProfileImage} />
 
               <button type="submit" className="profile-btn">
                 Save
