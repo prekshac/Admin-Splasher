@@ -63,8 +63,6 @@ const Navbar = () => {
           {loggedIn && (
             <div className="dropdown">
               <a
-<<<<<<< HEAD
-=======
                 className="dropdown-toggle d-flex align-items-center hidden-arrow"
                 href="#"
                 id="navbarDropdownMenuAvatar"
@@ -80,9 +78,8 @@ const Navbar = () => {
                     My profile
                   </NavLink>
                 </li>
->>>>>>> 7bd34105461233c4a75dfdc0d2c23633f4d4768f
                 
-              >
+              
                 <h2 className='vista123'  >Admin Splasher</h2>
                
               </a>
