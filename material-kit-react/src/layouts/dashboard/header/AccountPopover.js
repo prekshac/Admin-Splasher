@@ -26,7 +26,6 @@ const MENU_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
-
   const url = 'http://localhost:5000';
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
 
@@ -41,7 +40,7 @@ export default function AccountPopover() {
   const handleClose = () => {
     setOpen(null);
   };
-  
+
   const logout = () => {
     sessionStorage.removeItem('user');
     setCurrentUser(null);
@@ -68,7 +67,7 @@ export default function AccountPopover() {
           }),
         }}
       >
-        <Avatar src={`${url}+'/'+${currentUser.avatar}`} alt="photoURL" />
+        <Avatar src={currentUser.avatar?`${url}/${currentUser.avatar}` : currentUser.avatar} alt={currentUser.name} />
       </IconButton>
 
       <Popover

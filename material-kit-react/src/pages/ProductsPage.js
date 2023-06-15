@@ -39,9 +39,9 @@ export default function ProductsPage() {
   };
   const [productList, setProductList] = useState([]);
   const getFirebaseData = () => {
-    const q = query(collection(db, 'products'));
+    const q = query(collection(db, 'menu'));
     onSnapshot(q, (querySnapshot) => {
-      console.log(querySnapshot.docs);
+      // console.log(querySnapshot.docs);
       setProductList(
         querySnapshot.docs.map((doc) => ({
           id: doc.id,
@@ -79,7 +79,7 @@ export default function ProductsPage() {
         </Stack>
 
         {/* <ProductList products={} />                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         */}
-        <ProductList products={PRODUCTS} />
+        <ProductList products={productList} />
         <ProductCartWidget />
       </Container>
     </>

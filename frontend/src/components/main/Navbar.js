@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import app_config from '../../config';
 import { useUserContext } from '../../context/UserProvider';
@@ -7,7 +7,9 @@ import './Navbar.css';
 const { themeColor } = app_config;
 
 const Navbar = () => {
-  const { loggedIn, setLoggedIn, logout } = useUserContext();
+  const { loggedIn, setLoggedIn, logout, avatar } = useUserContext();
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const url = 'http://localhost:5000';
 
   return (
     <>
@@ -61,6 +63,24 @@ const Navbar = () => {
           {loggedIn && (
             <div className="dropdown">
               <a
+<<<<<<< HEAD
+=======
+                className="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img src={currentUser.avatar ? url+'/'+currentUser.avatar : currentUser.avatar} className="rounded-circle" height={25} alt="Black and White Portrait of a Man" loading="lazy" />
+              </a>
+              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                <li>
+                  <NavLink className="dropdown-item" to="/user/profile">
+                    My profile
+                  </NavLink>
+                </li>
+>>>>>>> 7bd34105461233c4a75dfdc0d2c23633f4d4768f
                 
               >
                 <h2 className='vista123'  >Admin Splasher</h2>
