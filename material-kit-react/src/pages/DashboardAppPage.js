@@ -33,9 +33,12 @@ export default function DashboardAppPage() {
   const [data, setData] = useState([]);
 
   const [userList, setUserList] = useState([]);
-  const [orderList, setOrderList] = useState([])
-  const[feedbackList, setFeedbackList] = useState([]);
+  const [orderList, setOrderList] = useState([]);
+  const [feedbackList, setFeedbackList] = useState([]);
   const [productList, setProductList] = useState([]);
+
+  const [foodData, setFoodData] = useState([]);
+  const [menuChartData, setMenuChartData] = useState([]);
 
   const getFirebaseData = () => {
     const q = query(collection(db, 'User'));
@@ -46,11 +49,10 @@ export default function DashboardAppPage() {
           id: doc.id,
           data: doc.data(),
         }))
-        
-        )
-        console.log(userList);
+      );
+      console.log(userList);
     });
-        const r = query(collection(db, 'Orders'));
+    const r = query(collection(db, 'Orders'));
     onSnapshot(r, (querySnapshot) => {
       console.log(querySnapshot.docs);
       setOrderList(
@@ -58,8 +60,7 @@ export default function DashboardAppPage() {
           id: doc.id,
           data: doc.data(),
         }))
-
-      )
+      );
       console.log(orderList);
     });
 
@@ -70,21 +71,31 @@ export default function DashboardAppPage() {
         querySnapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
-          }))
-      )
-        
+        }))
+      );
+
       console.log(feedbackList);
     });
 
     const t = query(collection(db, 'product'));
     onSnapshot(t, (querySnapshot) => {
       console.log(querySnapshot.docs);
-      setProductList(
-        querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
+      const data = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        data: doc.data(),
+      }));
+      setProductList(data);
+      // console.log(productList);
+    });
+
+    onSnapshot(query(collection(db, 'menu')), (querySnapshot) => {
+      // console.log(querySnapshot.docs);
+      const data = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        data: doc.data(),
+      }));
+      setFoodData(data);
+      setMenuChartData(getColumnSummary(data, 'category'));
       console.log(productList);
     });
   };
@@ -92,6 +103,31 @@ export default function DashboardAppPage() {
     getFirebaseData();
   }, []);
 
+  const getColumnSummary = (data, column) => {
+    const chartData = {};
+    const chartData2 = [];
+
+    // for (const obj of data) {
+    //   if (chartData.includes(obj[column])) {
+    //     chartData[obj[column]] += 1;
+    //   } else {
+    //     chartData[obj[column]] = 1;
+    //   }
+    // }
+    data.forEach(({id, data}) => {
+      if (Object.keys(chartData).includes(data[column])) {
+        chartData[data[column]] += 1;
+      } else {
+        chartData[data[column]] = 1;
+      }
+    });
+
+    Object.entries(chartData).forEach((pair) => {
+      chartData2.push({ label: pair[0], value: pair[1] });
+    });
+    console.log(chartData2);
+    return chartData2;
+  };
 
   return (
     <>
@@ -106,28 +142,23 @@ export default function DashboardAppPage() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Total Users" total={userList.length} icon={'ant-design:android-filled'} />
+            <AppWidgetSummary title="Total Users" total={userList.length} icon={'/user.png'} />
           </Grid>
 
+          <Grid item xs={12} sm={6} md={3}>
+            <AppWidgetSummary title="Total Orders" total={orderList.length} color="error" icon={'/order.png'} />
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={3}>
+            <AppWidgetSummary title="Products" total={productList.length} color="error" icon={'/product.png'} />
+          </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <AppWidgetSummary
-              title="Total Orders"
-              total={orderList.length}
+              title="Feedback"
+              total={feedbackList.length}
               color="error"
-              icon={'ant-design:apple-filled'}
+              icon={'ant-design:bug-filled'}
             />
-          </Grid>
-          
-         
-
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary title="Products" total={productList.length} color="error" icon={'ant-design:bug-filled'} />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <AppWidgetSummary 
-            title="Feedback" 
-            total={feedbackList.length}
-             color="error" icon={'ant-design:bug-filled'} />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>
@@ -172,13 +203,8 @@ export default function DashboardAppPage() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentVisits
-              title="Current Visits"
-              chartData={[
-                { label: 'America', value: 4344 },
-                { label: 'Asia', value: 5435 },
-                { label: 'Europe', value: 1443 },
-                { label: 'Africa', value: 4443 },
-              ]}
+              title="Menu Categories"
+              chartData={menuChartData}
               chartColors={[
                 theme.palette.primary.main,
                 theme.palette.info.main,
@@ -187,111 +213,8 @@ export default function DashboardAppPage() {
               ]}
             />
           </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppConversionRates
-              title="Conversion Rates"
-              subheader="(+43%) than last year"
-              chartData={[
-                { label: 'Italy', value: 400 },
-                { label: 'Japan', value: 430 },
-                { label: 'China', value: 448 },
-                { label: 'Canada', value: 470 },
-                { label: 'France', value: 540 },
-                { label: 'Germany', value: 580 },
-                { label: 'South Korea', value: 690 },
-                { label: 'Netherlands', value: 1100 },
-                { label: 'United States', value: 1200 },
-                { label: 'United Kingdom', value: 1380 },
-              ]}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentSubject
-              title="Current Subject"
-              chartLabels={['English', 'History', 'Physics', 'Geography', 'Chinese', 'Math']}
-              chartData={[
-                { name: 'Series 1', data: [80, 50, 30, 40, 100, 20] },
-                { name: 'Series 2', data: [20, 30, 40, 80, 20, 80] },
-                { name: 'Series 3', data: [44, 76, 78, 13, 43, 10] },
-              ]}
-              chartColors={[...Array(6)].map(() => theme.palette.text.secondary)}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppNewsUpdate
-              title="News Update"
-              list={[...Array(5)].map((_, index) => ({
-                id: faker.datatype.uuid(),
-                title: faker.name.jobTitle(),
-                description: faker.name.jobTitle(),
-                image: `/assets/images/covers/cover_${index + 1}.jpg`,
-                postedAt: faker.date.recent(),
-              }))}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppOrderTimeline
-              title="Order Timeline"
-              list={[...Array(5)].map((_, index) => ({
-                id: faker.datatype.uuid(),
-                title: [
-                  '1983, orders, $4220',
-                  '12 Invoices have been paid',
-                  'Order #37745 from September',
-                  'New order placed #XF-2356',
-                  'New order placed #XF-2346',
-                ][index],
-                type: `order${index + 1}`,
-                time: faker.date.past(),
-              }))}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppTrafficBySite
-              title="Traffic by Site"
-              list={[
-                {
-                  name: 'FaceBook',
-                  value: 323234,
-                  icon: <Iconify icon={'eva:facebook-fill'} color="#1877F2" width={32} />,
-                },
-                {
-                  name: 'Google',
-                  value: 341212,
-                  icon: <Iconify icon={'eva:google-fill'} color="#DF3E30" width={32} />,
-                },
-                {
-                  name: 'Linkedin',
-                  value: 411213,
-                  icon: <Iconify icon={'eva:linkedin-fill'} color="#006097" width={32} />,
-                },
-                {
-                  name: 'Twitter',
-                  value: 443232,
-                  icon: <Iconify icon={'eva:twitter-fill'} color="#1C9CEA" width={32} />,
-                },
-              ]}
-            />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppTasks
-              title="Tasks"
-              list={[
-                { id: '1', label: 'Create FireStone Logo' },
-                { id: '2', label: 'Add SCSS and JS files if required' },
-                { id: '3', label: 'Stakeholder Meeting' },
-                { id: '4', label: 'Scoping & Estimations' },
-                { id: '5', label: 'Sprint Showcase' },
-              ]}
-            />
-          </Grid>
         </Grid>
       </Container>
     </>
-  )};
+  );
+}
