@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import app_config from '../../config';
 import { useUserContext } from '../../context/UserProvider';
+import './Navbar.css';
 
 const { themeColor } = app_config;
 
@@ -29,9 +30,9 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/* Navbar brand */}
-            <a className="navbar-brand mt-2 mt-lg-0" href="#">
+            {/* <a className="navbar-brand mt-2 mt-lg-0" href="#">
               <img src="/logo.png" height={50} alt="MDB Logo" loading="lazy" />
-            </a>
+            </a> */}
             {/* Left links */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -60,28 +61,12 @@ const Navbar = () => {
           {loggedIn && (
             <div className="dropdown">
               <a
-                className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuAvatar"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" className="rounded-circle" height={25} alt="Black and White Portrait of a Man" loading="lazy" />
-              </a>
-              <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                <li>
-                  <NavLink className="dropdown-item" to="/user/profile">
-                    My profile
-                  </NavLink>
-                </li>
                 
-                <li>
-                  <a className="dropdown-item" href="" role="button" onClick={logout}>
-                    Logout
-                  </a>
-                </li>
-              </ul>
+              >
+                <h2 className='vista123'  >Admin Splasher</h2>
+               
+              </a>
+             
             </div>
           )}
         </div>

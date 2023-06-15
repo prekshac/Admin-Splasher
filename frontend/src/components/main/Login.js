@@ -113,12 +113,7 @@ const Login = () => {
                 {/* Register buttons */}
                 <div className="text-center">
                   <p>or sign in with:</p>
-                  <button
-                    type="button"
-                    className="btn btn-link btn-floating mx-1"
-                  >
-                    <i className="fab fa-facebook-f" />
-                  </button>
+                  
                   <button
                     type="button"
                     className="btn btn-link btn-floating mx-1"
@@ -131,12 +126,7 @@ const Login = () => {
                   >
                     <i className="fab fa-twitter" />
                   </button>
-                  <button
-                    type="button"
-                    className="btn btn-link btn-floating mx-1"
-                  >
-                    <i className="fab fa-github" />
-                  </button>
+                  
                 </div>
               </form>
             </div>

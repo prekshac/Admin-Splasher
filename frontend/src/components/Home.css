@@ -121,4 +121,63 @@
     color: #ffffff;
     
   }
+  .myimg{
+   
+   margin-right: 500px;
+    margin-left: 100px;
+  }
+  .myimg2{
+    margin-right: 10px;
+    margin-left: 500px;
+    
+    
+  }
+  .myimg3{
+    margin-right: 10px;
+    margin-left: 900px;
+    /* background-image: url("ankita.jpeg"); */
+  }
+  .lists4{
+    color: #ffffff;
+    margin-left: 540px;;
+  }
+  .lists2{
+    color: #ffffff;
+    margin-left: 140px
+  }
+  .lists3{
+    color: #ffffff;
+    margin-left: 990px
+  }
+  #Project{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: #fdfdfd00;
+    padding-bottom: -9px;
+    border: 5px solid white;
+    margin-left:50px;
+    margin-right:50px;
+
+  }
+  .heading4{
+    font-size: 30px;
+    font-weight: bolder;
+    color: #fffdfd;
+    padding-left:520px;
+    padding-right: 70px;
+    padding-top: -9px;
+    margin-top: 50px;
+    
+}
+.jkks2{
+    color: #fffdfd;
+    padding-left:99px;
+    padding-right: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+}
+
   
