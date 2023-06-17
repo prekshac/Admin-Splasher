@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import app_config from '../../config';
 import { useUserContext } from '../../context/UserProvider';
-import './Navbar.css';
 
 const { themeColor } = app_config;
 
@@ -32,9 +31,9 @@ const Navbar = () => {
           {/* Collapsible wrapper */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             {/* Navbar brand */}
-            {/* <a className="navbar-brand mt-2 mt-lg-0" href="#">
+            <a className="navbar-brand mt-2 mt-lg-0" href="#">
               <img src="/logo.png" height={50} alt="MDB Logo" loading="lazy" />
-            </a> */}
+            </a>
             {/* Left links */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
@@ -79,11 +78,12 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 
-              
-                <h2 className='vista123'  >Admin Splasher</h2>
-               
-              </a>
-             
+                <li>
+                  <a className="dropdown-item" href="" role="button" onClick={logout}>
+                    Logout
+                  </a>
+                </li>
+              </ul>
             </div>
           )}
         </div>
