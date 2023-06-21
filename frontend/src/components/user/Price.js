@@ -5,7 +5,7 @@ const Price = () => {
   return (
     <div>
       <div className='container'>
-        <img className='img-fluid' src="" />
+        <img className='img-fluid' src="" alt=''/>
         <div className='row'>
           <div className='col-md-4 mx-auto'>
             <div className='card'>
@@ -13,13 +13,13 @@ const Price = () => {
                 <h4 className='text-dark'>Regular Plan</h4>
               </div>
               <div className='card-body'>
-                <h5 className='text-center'>Features</h5>
+                <h5 className='text-center'>Starting at just ₹699/month</h5>
 
                 <ul>
-                  <li>Feature 1</li>
-                  <li>Feature 2</li>
-                  <li>Feature 3</li>
-                  <li>Feature 4</li>
+                  <li>Customized graphs and charts</li>
+                  <li>Better visualization</li>
+                  <li>Two factor authentication</li>
+                  <li>Priority support</li>
                 </ul>
 
 
