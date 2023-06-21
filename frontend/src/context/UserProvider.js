@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 const UserContext = createContext();
 
-const UserProvider = ({children, currentUser}) => {
+const UserProvider = ({children}) => {
 
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
     const [loggedIn, setLoggedIn] = useState(currentUser!==null);
+    const [avatar, setAvatar] = useState('');
     const navigate= useNavigate();
 
     const logout = () => {
@@ -14,7 +16,7 @@ const UserProvider = ({children, currentUser}) => {
         navigate('/main/login');
     }
 
-    return <UserContext.Provider value={{loggedIn, setLoggedIn, logout}}>
+    return <UserContext.Provider value={{loggedIn, setLoggedIn, logout, avatar, setAvatar}}>
         {children}
     </UserContext.Provider>
 }

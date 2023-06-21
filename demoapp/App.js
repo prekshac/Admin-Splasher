@@ -17,26 +17,25 @@ import firebase from "firebase/app";
 
 export default function App() {
   
-//   const firebaseConfig = {
-//     apiKey: "AIzaSyCv6upASkXMkRpKkeEgax6AXzBGZ4Ithh4",
-//   authDomain: "adminsplasher.firebaseapp.com",
-//   projectId: "adminsplasher",
-//   storageBucket: "adminsplasher.appspot.com",
-//   messagingSenderId: "501883015624",
-//   appId: "1:501883015624:web:f89f83f252cb789bb3b0fd",
-//   measurementId: "G-QXQX1RY85W"
-//   };
+  const firebaseConfig = {
+    apiKey: "AIzaSyCv6upASkXMkRpKkeEgax6AXzBGZ4Ithh4",
+  authDomain: "adminsplasher.firebaseapp.com",
+  projectId: "adminsplasher",
+  storageBucket: "adminsplasher.appspot.com",
+  messagingSenderId: "501883015624",
+  appId: "1:501883015624:web:f89f83f252cb789bb3b0fd",
+  measurementId: "G-QXQX1RY85W"
+  };
 
-  const app = null;
+  const app = initializeApp(firebaseConfig);
 //   if (!firebase.apps.length) {
-//     firebase.initializeApp({});
+    // firebase.initializeApp(firebaseConfig);
 //  }else {
 //     firebase.app(); // if already initialized, use that one
 //  }
   
 
   const Tab = createBottomTabNavigator();
-
 
   return (
     <View style={styles.container}>

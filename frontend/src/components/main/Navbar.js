@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import app_config from '../../config';
 import { useUserContext } from '../../context/UserProvider';
@@ -6,7 +6,9 @@ import { useUserContext } from '../../context/UserProvider';
 const { themeColor } = app_config;
 
 const Navbar = () => {
-  const { loggedIn, setLoggedIn, logout } = useUserContext();
+  const { loggedIn, setLoggedIn, logout, avatar } = useUserContext();
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const url = 'http://localhost:5000';
 
   return (
     <>
@@ -67,7 +69,7 @@ const Navbar = () => {
                 data-mdb-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" className="rounded-circle" height={25} alt="Black and White Portrait of a Man" loading="lazy" />
+                <img src={url+'/'+currentUser.avatar} className="rounded-circle" height={25} alt="" loading="lazy" />
               </a>
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                 <li>
