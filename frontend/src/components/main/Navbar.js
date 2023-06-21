@@ -69,7 +69,7 @@ const Navbar = () => {
                 data-mdb-toggle="dropdown"
                 aria-expanded="false"
               >
-                <img src={currentUser.avatar ? url+'/'+currentUser.avatar : currentUser.avatar} className="rounded-circle" height={25} alt="Black and White Portrait of a Man" loading="lazy" />
+                <img src={url+'/'+currentUser.avatar} className="rounded-circle" height={25} alt="" loading="lazy" />
               </a>
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                 <li>
