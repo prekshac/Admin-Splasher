@@ -126,81 +126,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div id='Project'>
-        <div className='card-3 '>
-          <div className='card-content3'>
-            <div className='heading4'>
-              Project contribution
-            </div>
-
-            <div className="row row-cols-3 g-3 w-50 d-flex justify-content-center m-auto align-items-center">
-              <div className="col">
-                <div className="card h-100">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-                    className="card-img-top"
-                    alt="Hollywood Sign on The Hill"
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                  {/* image add for logo socialmedia  */}
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card h-100">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp"
-                    className="card-img-top"
-                    alt="Palm Springs Road"
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                  {/* image add for logo socialmedia  */}
-                    
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="card h-100">
-                  <img
-                    src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp"
-                    className="card-img-top"
-                    alt="Los Angeles Skyscrapers"
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                  {/* image add for logo socialmedia  */}
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* <div className=" Project col-md-6">
-                <h5 className='jkks2'> Members:</h5>
-                <div className="myimg">
-                      <img src="./ankita.jpeg" alt="image" className='about-img' style={{ width: '250px', height: '200px' }} />
-                    </div>
-                    <li className='lists2'>Arihant Srivastava</li>
-                    <div className="myimg2">
-                      <img src="https://i.pinimg.com/564x/14/6a/f2/146af25e29189eb9a37bf293294aec1d.jpg" alt="image" className='about-img' style={{ width: '250px', height: '200px' }} />
-                    </div>
-                <ul >
-                 
-                   <li className='lists4'>Ankita Singh</li>
-                  <div className="myimg3">
-                      <img src="https://i.pinimg.com/564x/14/6a/f2/146af25e29189eb9a37bf293294aec1d.jpg" alt="image" className='about-img' style={{ width: '250px', height: '200px' }} />
-                    </div>
-                  <li className='lists3'>Preksha Chaturvedi</li>
-                  
-                </ul>
-               </div> */}
-
-          </div>
-        </div>
-      </div>
-
       <>
         {/* Footer */}
         <footer className="text-center text-lg-start bg-light text-muted" data-draggable="true" style={{ position: "relative" }}>
@@ -248,18 +173,19 @@ const Home = () => {
                     Admin Splasher
                   </h6>
                   <p>
-                    Here you can use rows and columns to organize your footer content.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  At Admin Splasher, we believe in the power of data visualization and providing you with the tools to make informed decisions. With our customizable dashboards, you have the freedom to design a visual representation of your data that suits your unique needs.
+
+Connect your mobile application to our dashboard and start monitoring your data today!
                   </p>
                 </div>
                 {/* Grid column */}
                 {/* Grid column */}
                 <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                   {/* Links */}
-                  <h6 className="text-uppercase fw-bold mb-4">Products</h6>
+                  <h6 className="text-uppercase fw-bold mb-4">Languages</h6>
                   <p>
                     <a href="#!" className="text-reset">
-                      Angular
+                      HTML
                     </a>
                   </p>
                   <p>
@@ -269,60 +195,21 @@ const Home = () => {
                   </p>
                   <p>
                     <a href="#!" className="text-reset">
-                      Vue
+                      CSS
                     </a>
                   </p>
                   <p>
                     <a href="#!" className="text-reset">
-                      Laravel
+                      JAVASCRIPT
                     </a>
                   </p>
                 </div>
                 {/* Grid column */}
                 {/* Grid column */}
-                <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                  {/* Links */}
-                  <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Pricing
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Settings
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Orders
-                    </a>
-                  </p>
-                  <p>
-                    <a href="#!" className="text-reset">
-                      Help
-                    </a>
-                  </p>
-                </div>
+                
                 {/* Grid column */}
                 {/* Grid column */}
-                <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                  {/* Links */}
-                  <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                  <p>
-                    <i className="fas fa-home me-3" /> New York, NY 10012, US
-                  </p>
-                  <p>
-                    <i className="fas fa-envelope me-3" />
-                    info@example.com
-                  </p>
-                  <p>
-                    <i className="fas fa-phone me-3" /> + 01 234 567 88
-                  </p>
-                  <p>
-                    <i className="fas fa-print me-3" /> + 01 234 567 89
-                  </p>
-                </div>
+                
                 {/* Grid column */}
               </div>
               {/* Grid row */}
@@ -330,15 +217,7 @@ const Home = () => {
           </section>
           {/* Section: Links  */}
           {/* Copyright */}
-          <div
-            className="text-center p-4"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-          >
-            © 2021 Copyright:
-            <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
-              MDBootstrap.com
-            </a>
-          </div>
+          
           {/* Copyright */}
         </footer>
         {/* Footer */}
