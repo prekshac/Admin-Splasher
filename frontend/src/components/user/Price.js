@@ -18,7 +18,7 @@ const Price = () => {
                 <ul>
                   <li>Customized graphs and charts</li>
                   <li>Better visualization</li>
-                  <li>Two factor authentication</li>
+                  <li>Theme changing</li>
                   <li>Priority support</li>
                 </ul>
 
