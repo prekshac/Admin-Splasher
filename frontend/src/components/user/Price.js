@@ -13,7 +13,7 @@ const Price = () => {
                 <h4 className='text-dark'>Regular Plan</h4>
               </div>
               <div className='card-body'>
-                <h5 className='text-center'>Starting at just ₹699/month</h5>
+                <h5 className='text-center'>Starting at just ₹7000/year</h5>
 
                 <ul>
                   <li>Customized graphs and charts</li>
